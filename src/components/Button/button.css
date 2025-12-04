@@ -1,0 +1,227 @@
+.nile-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 0;
+  width: auto;
+  height: min-content;
+  cursor: pointer;
+  font-weight: var(--typeface__weight__SemiBold);
+  border: 0px solid transparent;
+  transition: background-color 120ms ease, border-color 120ms ease,
+    color 120ms ease, transform 120ms ease;
+}
+.nile-btn:active {
+  transform: scale(0.96);
+}
+
+/* Sizes */
+.nile-btn--size-sm {
+  padding: var(--size__8) var(--size__6);
+  font-size: var(--typescale__12__size);
+  line-height: var(--typescale__12__lineheight);
+  letter-spacing: var(--typescale__12__tracking);
+  border-radius: var(--size__6);
+  --nile-btn-icon-size: 16px;
+}
+.nile-btn--size-sm .nile-btn__text {
+  margin-inline: var(--size__6);
+}
+
+.nile-btn--size-md {
+  padding: var(--size__10) var(--size__8);
+  font-size: var(--typescale__14__size);
+  line-height: var(--typescale__14__lineheight);
+  letter-spacing: var(--typescale__14__tracking);
+  border-radius: var(--size__8);
+  --nile-btn-icon-size: 20px;
+}
+.nile-btn--size-md .nile-btn__text {
+  margin-inline: var(--size__8);
+}
+
+.nile-btn--size-lg {
+  padding: var(--size__12) var(--size__10);
+  font-size: var(--typescale__16__size);
+  line-height: var(--typescale__16__lineheight);
+  letter-spacing: var(--typescale__16__tracking);
+  border-radius: var(--size__8);
+  --nile-btn-icon-size: 24px;
+}
+.nile-btn--size-lg .nile-btn__text {
+  margin-inline: var(--size__10);
+}
+
+/* Variants (simple defaults, can be swapped for tokens) */
+.nile-btn--primary {
+  background: var(--button__primary__background__btnbgdefault);
+  color: white;
+}
+.nile-btn--primary:hover {
+  background: var(--button__primary__background__btnbghover);
+}
+
+.nile-btn--secondary {
+  background: var(--button__secondary__background__btnbgdefault);
+  color: var(--button__secondary__text__btntextdefault);
+}
+.nile-btn--secondary:hover {
+  background: var(--button__secondary__background__btnbghover);
+}
+
+.nile-btn--tertiary {
+  background: var(--button__tertiary__background__btnbgdefault);
+  color: var(--button__tertiary__text__btntextdefault);
+  outline: 1px solid var(--button__tertiary__border__btnborderdefault);
+  outline-offset: -1px;
+}
+.nile-btn--tertiary:hover {
+  background: var(--button__tertiary__background__btnbghover);
+}
+
+.nile-btn--ghost {
+  background: transparent;
+  color: var(--button__ghost__text__btntextdefault);
+}
+.nile-btn--ghost:hover {
+  background: var(--button__ghost__background__btnbghover);
+  color: var(--button__ghost__text__btntextdefault);
+}
+
+.nile-btn--danger {
+  background: var(--button__danger__background__btnbgdefault);
+  color: var(--button__danger__text__btntextdefault);
+}
+.nile-btn--danger:hover {
+  background: var(--button__danger__background__btnbghover);
+  color: var(--button__danger__text__btntexthover);
+}
+
+.nile-btn.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Icon / text layout */
+.nile-btn__lead,
+.nile-btn__trail {
+  display: inline-flex;
+  align-items: center;
+}
+.nile-btn__lead svg,
+.nile-btn__trail svg {
+  width: var(--nile-btn-icon-size);
+  height: var(--nile-btn-icon-size);
+  color: currentColor;
+}
+
+.nile-btn__text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[class*="nile-btn--size-"] .nile-btn__lead {
+  margin-left: 4px;
+}
+
+[class*="nile-btn--size-"] .nile-btn__trail {
+  margin-right: 4px;
+}
+
+/* Icon-only */
+.nile-btn--option-icon-only {
+  justify-content: center;
+}
+.nile-btn--size-sm.nile-btn--option-icon-only {
+  width: 32px;
+  height: 32px;
+}
+.nile-btn--size-md.nile-btn--option-icon-only {
+  width: 40px;
+  height: 40px;
+}
+.nile-btn--size-lg.nile-btn--option-icon-only {
+  width: 48px;
+  height: 48px;
+}
+
+/* centered icon-only content */
+.nile-btn__icon-only {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nile-btn__icon-only svg {
+  width: var(--nile-btn-icon-size);
+  height: var(--nile-btn-icon-size);
+}
+
+/* Spinner placeholder */
+.nile-btn--option-loading {
+  justify-content: center;
+}
+.nile-btn--size-sm.nile-btn--option-loading {
+  width: 32px;
+  height: 32px;
+}
+.nile-btn--size-md.nile-btn--option-loading {
+  width: 40px;
+  height: 40px;
+}
+.nile-btn--size-lg.nile-btn--option-loading {
+  width: 48px;
+  height: 48px;
+}
+
+.nile-btn__spinner {
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.9);
+  animation: nile-spin 0.8s linear infinite;
+}
+
+/* Secondary, tertiary, and ghost sit on white backgrounds: use dark spinner */
+.nile-btn--secondary .nile-btn__spinner,
+.nile-btn--tertiary .nile-btn__spinner,
+.nile-btn--ghost .nile-btn__spinner {
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-top-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Danger uses a red spinner */
+.nile-btn--danger .nile-btn__spinner {
+  border: 2px solid rgba(220, 38, 38, 0.25);
+  border-top-color: rgba(220, 38, 38, 0.9);
+}
+
+/* When danger button is hovered, spinner should be white for contrast */
+.nile-btn--danger:hover .nile-btn__spinner {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.9);
+}
+
+.nile-btn--size-sm .nile-btn__spinner {
+  width: 16px;
+  height: 16px;
+}
+
+.nile-btn--size-md .nile-btn__spinner {
+  width: 20px;
+  height: 20px;
+}
+
+.nile-btn--size-lg .nile-btn__spinner {
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes nile-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

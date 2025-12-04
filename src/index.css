@@ -1,0 +1,648 @@
+/* Import Inter from Google Fonts (performance: consider self-hosting for production) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap");
+
+:root {
+  font-family: var(--typeface__Brand), system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--color-background-light);
+  background-color: var(--color-background-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+
+  /* ==================================== */
+  /* [PT] - Global Tokens                 */
+  /* ==================================== */
+  --size__0: 0px;
+  --size__2: 2px;
+  --size__4: 4px;
+  --size__6: 6px;
+  --size__8: 8px;
+  --size__10: 10px;
+  --size__12: 12px;
+  --size__14: 14px;
+  --size__16: 16px;
+  --size__20: 20px;
+  --size__24: 24px;
+  --size__28: 28px;
+  --size__32: 32px;
+  --size__36: 36px;
+  --size__40: 40px;
+  --size__44: 44px;
+  --size__48: 48px;
+  --size__52: 52px;
+  --size__56: 56px;
+  --size__64: 64px;
+  --size__72: 72px;
+  --size__80: 80px;
+  --size__88: 88px;
+  --size__96: 96px;
+
+  /* Gray */
+  --color__gray__0: #ffffff;
+  --color__gray__25: #f8f8f8;
+  --color__gray__50: #f3f3f3;
+  --color__gray__75: #e8e8e8;
+  --color__gray__100: #d1d1d1;
+  --color__gray__200: #bababa;
+  --color__gray__300: #a3a3a3;
+  --color__gray__400: #8b8b8b;
+  --color__gray__500: #747474;
+  --color__gray__600: #5d5d5d;
+  --color__gray__700: #464646;
+  --color__gray__800: #2f2f2f;
+  --color__gray__900: #222222;
+  --color__gray__950: #181818;
+
+  /* Blue */
+  --color__blue__25: #f5faff;
+  --color__blue__50: #e6f2ff;
+  --color__blue__75: #cce5ff;
+  --color__blue__100: #a1cfff;
+  --color__blue__200: #6bb4fe;
+  --color__blue__300: #2b93fe;
+  --color__blue__400: #007dfe;
+  --color__blue__500: #0062c7;
+  --color__blue__600: #0052a6;
+  --color__blue__700: #004185;
+  --color__blue__800: #003164;
+  --color__blue__900: #002142;
+
+  /* Green */
+  --color__green__25: #f2fcf6;
+  --color__green__50: #e6faee;
+  --color__green__75: #c4f5d7;
+  --color__green__100: #96e3b5;
+  --color__green__200: #6bd796;
+  --color__green__300: #2bc769;
+  --color__green__400: #00ba4a;
+  --color__green__500: #009e3f;
+  --color__green__600: #008435;
+  --color__green__700: #00692a;
+  --color__green__800: #004f20;
+  --color__green__900: #003515;
+
+  /* Legacy Gray (P) */
+  --color__legacygray__P25: #f7f6f6;
+  --color__legacygray__P50: #ededed;
+  --color__legacygray__P75: #d1d1d1;
+  --color__legacygray__P100: #959595;
+  --color__legacygray__P200: #686868;
+  --color__legacygray__P300: #494949;
+  --color__legacygray__P400: #333333;
+
+  /* Red */
+  --color__red__25: #fff7f8;
+  --color__red__50: #fde8e9;
+  --color__red__75: #ffcfd0;
+  --color__red__100: #f8a2a5;
+  --color__red__200: #f57b80;
+  --color__red__300: #f04349;
+  --color__red__400: #ed1c24;
+  --color__red__500: #c9141b;
+  --color__red__600: #a71117;
+  --color__red__700: #860d12;
+  --color__red__800: #650a0e;
+  --color__red__900: #430709;
+
+  /* Yellow */
+  --color__yellow__25: #fffaed;
+  --color__yellow__50: #fff4d6;
+  --color__yellow__75: #ffe9b2;
+  --color__yellow__100: #ffdf8c;
+  --color__yellow__200: #ffcf57;
+  --color__yellow__300: #ffc83d;
+  --color__yellow__400: #ffb700;
+  --color__yellow__500: #e5a500;
+  --color__yellow__600: #d49800;
+  --color__yellow__700: #aa7a00;
+  --color__yellow__800: #805c00;
+  --color__yellow__900: #553d00;
+
+  /* Typography */
+  --typeface__Brand: Inter;
+  --typeface__weight__Bold: 700;
+  --typeface__weight__SemiBold: 600;
+  --typeface__weight__Medium: 500;
+  --typeface__weight__Regular: 400;
+
+  /* Type Scale Values (Used for reference in Alias Tokens) */
+  --typescale__56__size: 56px;
+  --typescale__56__lineheight: 72px;
+  --typescale__56__tracking: -1.2000000476837158;
+  --typescale__48__size: 48px;
+  --typescale__48__lineheight: 60px;
+  --typescale__48__tracking: -1.2000000476837158;
+  --typescale__40__size: 40px;
+  --typescale__40__lineheight: 56px;
+  --typescale__40__tracking: -0.800000011920929;
+  --typescale__32__size: 32px;
+  --typescale__32__lineheight: 42px;
+  --typescale__32__tracking: -0.6700000166893005;
+  --typescale__24__size: 24px;
+  --typescale__24__lineheight: 34px;
+  --typescale__24__tracking: -0.46000000834465027;
+  --typescale__22__size: 22px;
+  --typescale__22__lineheight: 30px;
+  --typescale__22__tracking: -0.3700000047683716;
+  --typescale__18__size: 18px;
+  --typescale__18__lineheight: 26px;
+  --typescale__18__tracking: -0.25;
+  --typescale__16__size: 16px;
+  --typescale__16__lineheight: 24px;
+  --typescale__16__tracking: -0.18000000715255737;
+  --typescale__14__size: 14px;
+  --typescale__14__lineheight: 20px;
+  --typescale__14__tracking: -0.09600000083446503;
+  --typescale__12__size: 12px;
+  --typescale__12__lineheight: 16px;
+  --typescale__12__tracking: 0;
+  --typescale__10__size: 10px;
+  --typescale__10__lineheight: 12px;
+  --typescale__10__tracking: 0.1599999964237213;
+
+  /* ==================================== */
+  /* [ST] - Alias Tokens                  */
+  /* Catatan: Mengganti '/' dengan '-' agar kompatibel dengan CSS var() */
+  /* ==================================== */
+  /* Surface */
+  --colors__surface__primary__bgprimary: var(--color__gray__0);
+  --colors__surface__primary__fgprimarymed: var(--color__gray__50);
+  --colors__surface__primary__fgprimarylow: var(--color__gray__25);
+  --colors__surface__primary__fgprimaryhigh: var(--color__gray__75);
+  --colors__surface__primary__fgprimarydefault: var(--color__gray__0);
+  --colors__surface__info__bginfo: var(--color__blue__400);
+  --colors__surface__info__fginfomed: var(--color__blue__50);
+  --colors__surface__info__fginfolow: var(--color__blue__25);
+  --colors__surface__info__fginfohigh: var(--color__blue__75);
+  --colors__surface__warning__bgwarning: var(--color__yellow__400);
+  --colors__surface__warning__fgwarningmed: var(--color__yellow__50);
+  --colors__surface__warning__fgwarninglow: var(--color__yellow__25);
+  --colors__surface__warning__fgwarninghigh: var(--color__yellow__75);
+  --colors__surface__error__bgerror: var(--color__red__400);
+  --colors__surface__error__fgerrormed: var(--color__red__50);
+  --colors__surface__error__fgerrorlow: var(--color__red__25);
+  --colors__surface__error__fgerrorhigh: var(--color__red__75);
+  --colors__surface__success__bgsuccess: var(--color__green__500);
+  --colors__surface__success__fgsuccessmed: var(--color__green__50);
+  --colors__surface__success__fgsuccesslow: var(--color__green__25);
+  --colors__surface__success__fgsuccesshigh: var(--color__green__75);
+  --colors__surface__additional__bgwhite: var(--color__gray__0);
+  --colors__surface__additional__bginverted: var(--color__gray__950);
+  --colors__surface__additional__sysschrim: rgba(0, 0, 0, 0.6);
+  --colors__surface__additional__sysschrimlevel2: rgba(0, 0, 0, 0.25);
+  --colors__surface__additional__sysschrimlevel3: rgba(0, 0, 0, 0.35);
+  --colors__surface__additional__fgmenuselected: var(--color__gray__800);
+
+  /* Text */
+  --colors__text__additional__textmenuinactive: var(--color__gray__300);
+  --colors__text__primary__texttitle: var(--color__gray__900);
+  --colors__text__primary__texttitlelow: var(--color__gray__800);
+  --colors__text__primary__textbodyprominent: var(--color__gray__700);
+  --colors__text__primary__textbody: var(--color__gray__600);
+  --colors__text__primary__textplaceholder: var(--color__gray__300);
+  --colors__text__primary__textdisable: var(--color__gray__200);
+  --colors__text__primary__textlabel: var(--color__gray__400);
+  --colors__text__primary__textinverted: var(--color__gray__0);
+  --colors__text__info__textinfo: var(--color__blue__400);
+  --colors__text__success__textsuccess: var(--color__green__600);
+  --colors__text__warning__textwarning: var(--color__yellow__700);
+  --colors__text__error__texterror: var(--color__red__500);
+  --colors__text__additional__textmenuactive: var(--color__gray__0);
+
+  /* Border */
+  --colors__border__primary__borderprimaryhigh: var(--color__gray__100);
+  --colors__border__primary__borderprimarymed: var(--color__gray__75);
+  --colors__border__primary__borderprimarylow: var(--color__gray__50);
+  --colors__border__info__borderinfohigh: var(--color__blue__100);
+  --colors__border__info__borderinfomed: var(--color__blue__75);
+  --colors__border__info__borderinfolow: var(--color__blue__50);
+  --colors__border__success__bordersuccesshigh: var(--color__green__100);
+  --colors__border__success__bordersuccessmed: var(--color__green__75);
+  --colors__border__success__bordersuccesslow: var(--color__green__50);
+  --colors__border__warning__borderwarninghigh: var(--color__yellow__100);
+  --colors__border__warning__borderwarningmed: var(--color__yellow__75);
+  --colors__border__warning__borderwarninglow: var(--color__yellow__50);
+  --colors__border__error__bordererrorhigh: var(--color__red__100);
+  --colors__border__error__bordererrormed: var(--color__red__75);
+  --colors__border__error__bordererrorlow: var(--color__red__50);
+  --colors__border__additional__bordermenu: var(--color__gray__400);
+
+  /* Icon */
+  --colors__icon__iconlow: var(--color__gray__400);
+  --colors__icon__iconmed: var(--color__gray__500);
+  --colors__icon__iconhigh: var(--color__gray__600);
+  --colors__icon__iconprominent: var(--color__gray__800);
+  --colors__icon__iconinfo: var(--color__blue__400);
+  --colors__icon__iconsuccess: var(--color__green__500);
+  --colors__icon__iconwarning: var(--color__yellow__700);
+  --colors__icon__iconerror: var(--color__red__400);
+  --colors__icon__iconinvert: var(--color__gray__0);
+  --colors__icon__additional__iconmenuinactive: var(--color__gray__300);
+  --colors__icon__additional__iconmenuactive: var(--color__gray__0);
+
+  /* Corner Radius */
+  --cornerradius__roundedfull: 9999px; /* Nilai numerik diubah menjadi string dengan 'px' agar konsisten, meskipun 9999 juga valid */
+
+  /* Component-level Alias Tokens (Hanya yang memiliki nilai yang dapat di-render) */
+  --colors__surface__additional__bgmenu: var(--color__gray__900);
+
+  /* ==================================== */
+  /* [SC] - Component Tokens              */
+  /* =eratkan semua value object [object Object] dan menggantinya dengan nilai 0 atau string/variabel yang relevan */
+  /* ==================================== */
+
+  /* Button Primary */
+  --button__primary__background__btnbgdefault: var(--color__gray__950);
+  --button__primary__text__btntextdefault: var(--color__gray__0);
+  --button__primary__background__btnbghover: var(--color__gray__800);
+  --button__primary__icon__btnicondefault: var(--color__gray__0);
+  --button__primary__background__btnbgdisable: var(--color__gray__50);
+  --button__primary__text__btntextdisable: var(--color__gray__200);
+  --button__primary__icon__btnicondisable: var(--color__gray__200);
+
+  /* Button Secondary */
+  --button__secondary__background__btnbgdefault: var(--color__gray__25);
+  --button__secondary__background__btnbghover: var(--color__gray__75);
+  --button__secondary__background__btnbgdisable: var(--color__gray__50);
+  --button__secondary__text__btntextdefault: var(--color__gray__800);
+  --button__secondary__text__btntextdisable: var(--color__gray__200);
+  --button__secondary__icon__btnicondefault: var(--color__gray__800);
+  --button__secondary__icon__btnicondisable: var(--color__gray__200);
+
+  /* Button Danger */
+  --button__danger__background__btnbgdefault: var(--color__red__50);
+  --button__danger__background__btnbghover: var(--color__red__400);
+  --button__danger__background__btnbgdisable: var(--color__gray__50);
+  --button__danger__text__btntextdefault: var(--color__red__400);
+  --button__danger__text__btntextdisable: var(--color__gray__200);
+  --button__danger__icon__btnicondefault: var(--color__red__400);
+  --button__danger__icon__btnicondisable: var(--color__gray__200);
+  --button__danger__text__btntexthover: var(--color__gray__0);
+  --button__danger__icon__btniconhover: var(--color__gray__0);
+
+  /* Button Tertiary */
+  --button__tertiary__background__btnbgdefault: var(--color__gray__0);
+  --button__tertiary__background__btnbghover: var(--color__gray__50);
+  --button__tertiary__background__btnbgdisable: var(--color__gray__0);
+  --button__tertiary__text__btntextdefault: var(--color__gray__800);
+  --button__tertiary__text__btntextdisable: var(--color__gray__200);
+  --button__tertiary__icon__btnicondefault: var(--color__gray__800);
+  --button__tertiary__icon__btnicondisable: var(--color__gray__200);
+  --button__tertiary__border__btnborderdefault: var(--color__gray__100);
+  --button__tertiary__border__btnborderdisable: var(--color__gray__75);
+
+  /* Button Ghost */
+  --button__ghost__background__btnbghover: var(--color__gray__50);
+  --button__ghost__text__btntextdefault: var(--color__gray__800);
+  --button__ghost__text__btntextdisable: var(--color__gray__200);
+  --button__ghost__icon__btnicondefault: var(--color__gray__800);
+  --button__ghost__icon__btnicondisable: var(--color__gray__200);
+
+  /* Link */
+  --link__text__linktextdefault: var(--color__blue__400);
+  --link__text__linktexthover: var(--color__blue__500);
+  --link__text__linktextdisable: var(--color__gray__200);
+  --link__icon__linkicondefault: var(--color__blue__400);
+  --link__icon__linkiconhover: var(--color__blue__500);
+  --link__icon__linkicondisable: var(--color__gray__200);
+
+  /* Banner (Error) */
+  --banner__error__background__bannerbg: var(--color__red__25);
+  --banner__error__border__bannerborder: var(--color__red__400);
+  --banner__error__border__bannerborderlow: var(--color__red__100);
+  --banner__error__text__bannertexttitle: var(--color__red__500);
+  --banner__error__text__bannertextsubtitle: var(--color__gray__700);
+  --banner__error__icon__bannericondismiss: var(--color__gray__300);
+  --banner__error__icon__bannericonerror: var(--color__red__500);
+
+  /* Banner (Info) */
+  --banner__info__background__bannerbg: var(--color__blue__25);
+  --banner__info__border__bannerborder: var(--color__blue__400);
+  --banner__info__border__bannerborderlow: var(--color__blue__100);
+  --banner__info__text__bannertexttitle: var(--color__blue__500);
+  --banner__info__text__bannertextsubtitle: var(--color__gray__700);
+  --banner__info__icon__bannericondismiss: var(--color__gray__400);
+  --banner__info__icon__bannericoninfo: var(--color__blue__500);
+
+  /* Banner (Success) */
+  --banner__success__background__bannerbg: var(--color__green__25);
+  --banner__success__border__bannerborder: var(--color__green__400);
+  --banner__success__border__bannerborderlow: var(--color__green__100);
+  --banner__success__text__bannertexttitle: var(--color__green__600);
+  --banner__success__icon__bannericonsuccess: var(--color__green__500);
+  --banner__success__text__bannertextsubtitle: var(--color__gray__700);
+  --banner__success__icon__bannericondismiss: var(--color__gray__400);
+
+  /* Banner (Warning) */
+  --banner__warning__background__bannerbg: var(--color__yellow__25);
+  --banner__warning__border__bannerborder: var(--color__yellow__400);
+  --banner__warning__border__bannerborderlow: var(--color__yellow__100);
+  --banner__warning__text__bannertexttitle: var(--color__yellow__800);
+  --banner__warning__icon__bannericonwarning: var(--color__yellow__800);
+  --banner__warning__text__bannertextsubtitle: var(--color__gray__700);
+  --banner__warning__icon__bannericondismiss: var(--color__gray__400);
+
+  /* Banner (General/Default) */
+  --banner__general__background__bannerbg: var(--color__gray__25);
+  --banner__general__border__bannerborder: var(--color__gray__400);
+  --banner__general__border__bannerborderlow: var(--color__gray__100);
+  --banner__general__icon__bannericoninfo: var(--color__gray__500);
+  --banner__general__icon__bannericondismiss: var(--color__gray__400);
+  --banner__general__text__bannertexttitle: var(--color__gray__500);
+  --banner__general__text__bannertextsubtitle: var(--color__gray__700);
+
+  /* Badge */
+  --badge__background__badgebgred: var(--color__red__400);
+  --badge__background__badgebggreen: var(--color__green__500);
+  --badge__background__badgebgblue: var(--color__blue__400);
+  --badge__background__badgebggray: var(--color__gray__300);
+  --badge__background__badgebgwhite: var(--color__gray__0);
+  --badge__background__badgebgblack: var(--color__gray__950);
+  --badge__text__badgetext: var(--color__gray__0);
+  --badge__text__badgetextinv: var(--color__gray__700);
+
+  /* Checkbox */
+  --checkbox__background__cbbgdefault: var(--color__gray__0);
+  --checkbox__background__cbbgactive: var(--color__gray__950);
+  --checkbox__background__cbbgdisable: var(--color__gray__25);
+  --checkbox__border__cbborderdefault: var(--color__gray__100);
+  --checkbox__border__cbborderhover: var(--color__gray__950);
+  --checkbox__icon__cbiconactive: var(--color__gray__0);
+  --checkbox__icon__cbicondisable: var(--color__gray__100);
+  --checkbox__background__cbbghover: var(--color__gray__800);
+
+  /* Chips */
+  --chips__background__chipbgdefault: var(--color__gray__50);
+  --chips__background__chipbghover: var(--color__gray__75);
+  --chips__background__chipbgdisable: var(--color__gray__50);
+  --chips__text__chiptextdefault: var(--color__gray__800);
+  --chips__text__chiptextdisable: var(--color__gray__200);
+  --chips__icon__chipicondefault: var(--color__gray__800);
+  --chips__icon__chipicondisable: var(--color__gray__200);
+  --chips__background__chipbgactive: var(--color__gray__950);
+  --chips__text__chiptextactive: var(--color__gray__0);
+
+  /* Datepicker */
+  --datepicker__background__dpbgselectedhigh: var(--color__gray__950);
+  --datepicker__background__dpbgselectedmed: var(--color__gray__50);
+  --datepicker__background__dpbghover: var(--color__gray__25);
+  --datepicker__background__dpbgsurface: var(--color__gray__0);
+  --datepicker__text__dptextdefault: var(--color__gray__600);
+  --datepicker__text__dptextdisable: var(--color__gray__200);
+  --datepicker__text__dptextselected: var(--color__gray__700);
+  --datepicker__text__dptextinvselected: var(--color__gray__0);
+  --datepicker__icon__dpicon: var(--color__gray__400);
+  --datepicker__border__dpbordertoday: var(--color__gray__600);
+
+  /* Spinner */
+  --spinner__spinnerstopmain: #181818;
+  --spinner__spinnerstopaccent: rgba(255, 255, 255, 0);
+
+  /* Icon File */
+  --iconfile__icon_filemain: var(--color__gray__75);
+  --iconfile__icon_fileaccent: var(--color__gray__600);
+
+  /* Pagination */
+  --pagination__text__paginationtextdefault: var(--color__gray__600);
+  --pagination__text__paginationtextactive: var(--color__gray__0);
+  --pagination__background__paginationbghover: var(--color__gray__75);
+  --pagination__background__paginationbgactive: var(--color__gray__950);
+  --pagination__icon__paginationicondefault: var(--color__gray__600);
+  --pagination__text__paginationtexthover: var(--color__gray__700);
+  --pagination__icon__paginationiconhover: var(--color__gray__700);
+
+  /* Radio Button */
+  --radiobutton__background__rbbgdefault: var(--color__gray__0);
+  --radiobutton__background__rbbgdisable: var(--color__gray__25);
+  --radiobutton__icon__rbiconactive: var(--color__gray__950);
+  --radiobutton__icon__rbicondisable: var(--color__gray__100);
+  --radiobutton__border__rbborderdefault: var(--color__gray__100);
+  --radiobutton__border__rbborderactive_hover: var(--color__gray__950);
+
+  /* Toggle */
+  --toggle__background__togglebginactive_default: var(--color__gray__25);
+  --toggle__background__togglebginactive_disable: var(--color__gray__75);
+  --toggle__thumb__togglebgthumbdefault: var(--color__gray__0);
+  --toggle__thumb__togglebgthumbdisable: var(--color__gray__25);
+  --toggle__background__togglebgactive_default: var(--color__gray__950);
+  --toggle__background__togglebgactive_disable: var(--color__gray__100);
+
+  /* Tooltip/Popover */
+  --tootlip__tooltipbg: var(--color__gray__950);
+  --tootlip__tooltiptexttitle: var(--color__gray__50);
+  --tootlip__tooltiptextbody: var(--color__gray__100);
+
+  /* Tab */
+  --tab__background__tabbghover: var(--color__gray__50);
+  --tab__border__tabborderdefault: var(--color__gray__75);
+  --tab__border__tabborderactive: var(--color__gray__950);
+  --tab__text__tabtextinactive: var(--color__gray__400);
+  --tab__text__tabtextactive: var(--color__gray__800);
+  --tab__text__tabtexthover: var(--color__gray__400);
+
+  /* Alert (Success) */
+  --alert__success__alertbgsuccess: var(--color__green__50);
+  --alert__success__alerticonsuccess: var(--color__green__600);
+  --alert__success__alerttextsuccess: var(--color__green__600);
+  --alert__success__alertbordersuccess: var(--color__green__75);
+
+  /* Alert (Error) */
+  --alert__error__alertbgerror: var(--color__red__50);
+  --alert__error__alerticonerror: var(--color__red__500);
+  --alert__error__alerttexterror: var(--color__red__500);
+  --alert__error__alertbordererror: var(--color__red__75);
+
+  /* Alert (Warning) */
+  --alert__warning__alertbgwarning: var(--color__yellow__50);
+  --alert__warning__alertborderwarning: var(--color__yellow__75);
+  --alert__warning__alerticonwarning: var(--color__yellow__800);
+  --alert__warning__alerttextwarning: var(--color__yellow__800);
+
+  /* Alert (Info) */
+  --alert__info__alertbginfo: var(--color__blue__50);
+  --alert__info__alertborderinfo: var(--color__blue__75);
+  --alert__info__alerticoninfo: var(--color__blue__600);
+  --alert__info__alerttextinfo: var(
+    --color__blue__600
+  ); /* Note: textsuccess di info, mungkin typo dari source */
+  --alert__alerticondismissable: var(--color__gray__400);
+
+  /* Alert (Default) */
+  --alert__default__alertbgdefault: var(--color__gray__25);
+  --alert__default__alerttextdefault: var(--color__gray__600);
+  --alert__default__alertborderdefault: var(--color__gray__75);
+
+  /* Text Field */
+  --textfield__text__tftextplaceholder: var(--color__gray__300);
+  --textfield__text__tftextfilled: var(--color__gray__600);
+  --textfield__text__tftextdisable: var(--color__gray__500);
+  --textfield__border__tfborderdefault: var(--color__gray__100);
+  --textfield__border__tfbordererror: var(--color__red__400);
+  --textfield__border__tfborderfocused: var(--color__gray__950);
+  --textfield__icon__tficondefault: var(--color__gray__400);
+  --textfield__icon__tficondisable: var(--color__gray__400);
+  --textfield__border__tfborderfocusedring: rgba(24, 24, 24, 0.2);
+  --textfield__border__tfbordererrorring: rgba(237, 28, 36, 0.2);
+  --textfield__background__tfbgdefault: var(--color__gray__0);
+  --textfield__background__tfbgdisable: var(--color__gray__50);
+
+  /* List */
+  --list__background__listbgsurface: var(--color__gray__0);
+  --list__background__listbghover: var(--color__gray__25);
+  --list__border__listdivider: var(--color__gray__75);
+  --list__border__listborder: var(--color__gray__50);
+  --list__icon__listicon: var(--color__gray__500);
+  --list__text__listtextdefault: var(--color__gray__600);
+  --list__text__listtextlabel: var(--color__gray__400);
+  --list__text__listtextdescription: var(--color__gray__500);
+  --list__text__listtexttitle: var(--color__gray__800);
+
+  /* FABs (Floating Action Buttons) */
+  --fabs__primary__background__fabbgdefault: var(--color__gray__950);
+  --fabs__primary__background__fabbghover: var(--color__gray__800);
+  --fabs__primary__icon__fabicondefault: var(--color__gray__0);
+  --fabs__primary__text__fabtextdefault: var(--color__gray__0);
+  --fabs__secondary__background__fabbgdefault: var(--color__gray__50);
+  --fabs__secondary__background__fabbghover: var(--color__gray__75);
+  --fabs__secondary__icon__fabicondefault: var(--color__gray__800);
+  --fabs__secondary__text__fabtextdefault: var(--color__gray__800);
+
+  /* Popover */
+  --popover__popoverbg: var(--color__gray__950);
+  --popover__popovertexttitle: var(--color__gray__50);
+  --popover__popovertextbody: var(--color__gray__100);
+  --popover__buttonprimary__popover_btnbgdefault: var(--color__gray__0);
+  --popover__buttonprimary__popover_btnbghover: var(--color__gray__75);
+  --popover__buttonprimary__popover_btnbgdisable: var(--color__gray__800);
+  --popover__buttonprimary__popover_btntextdefault: var(--color__gray__800);
+  --popover__buttonprimary__popover_btntextdisable: var(--color__gray__600);
+  --popover__buttonghost__popover_btnbghover: var(--color__gray__800);
+  --popover__buttonghost__popover_btntextdefault: var(--color__gray__0);
+  --popover__buttonghost__popover_btntextdisable: var(--color__gray__600);
+
+  /* Snackbar */
+  --snackbar__snackbarbg: var(--color__gray__900);
+  --snackbar__snackbartext: var(--color__gray__75);
+  --snackbar__snackbaricondefault: var(--color__gray__300);
+  --snackbar__snackbaraction_textdefault: var(--color__blue__200);
+  --snackbar__snackbaraction_bghover: var(--color__blue__900);
+  --snackbar__snackbaricon_bghover: var(--color__gray__700);
+
+  /* Filter Chips */
+  --filterchips__background__fcbgdefault: var(--color__gray__0);
+  --filterchips__background__fcbgactive: var(--color__gray__50);
+  --filterchips__text__fctextdefault: var(--color__gray__700);
+  --filterchips__text__fctextdisable: var(--color__gray__200);
+  --filterchips__icon__fcicondefault: var(--color__gray__700);
+  --filterchips__icon__fcicondisable: var(--color__gray__200);
+  --filterchips__border__fcborderdefault: var(--color__gray__100);
+  --filterchips__border__fcborderhover_active: var(--color__gray__950);
+
+  /* Circular Progress */
+  --circularprogress__cptrackdefault: var(--color__gray__75);
+  --circularprogress__cpthumbdefault: var(--color__gray__950);
+  --circularprogress__cptrackinv: var(--color__gray__300);
+  --circularprogress__cpthumbinv: var(--color__gray__0);
+
+  /* Search Bar */
+  --searchbar__searchbgdefault: var(--color__gray__25);
+  --searchbar__searchtextplaceholder: var(--color__gray__300);
+  --searchbar__searchborderdefault: var(--color__gray__100);
+  --searchbar__searchtextfilled: var(--color__gray__700);
+  --searchbar__searchicondefault: var(--color__gray__400);
+
+  /* Button Group */
+  --buttongroup__background__btn_groupbgcontainer: var(--color__gray__50);
+  --buttongroup__background__btn_groupbgactive: var(--color__gray__0);
+  --buttongroup__background__btn_groupbghover: var(--color__gray__75);
+  --buttongroup__icon__btn_groupicondefault: var(--color__gray__600);
+  --buttongroup__icon__btn_groupicondisable: var(--color__gray__300);
+  --buttongroup__icon__btn_groupiconactive: var(--color__gray__800);
+  --buttongroup__text__btn_grouptextdefault: var(--color__gray__600);
+  --buttongroup__text__btn_grouptextdisable: var(--color__gray__300);
+  --buttongroup__text__btn_grouptextactive: var(--color__gray__800);
+  --buttongroup__border__btn_groupborderdefault: var(--color__gray__75);
+
+  /* Selection Box */
+  --selectionbox__sbbgdefault: var(--color__gray__0);
+  --selectionbox__sbbgselected: var(--color__gray__50);
+  --selectionbox__sbborderdefault: var(--color__gray__100);
+  --selectionbox__sbborderselected: var(--color__gray__950);
+  --selectionbox__sbtexttitle: var(--color__gray__900);
+  --selectionbox__sbtextdescription: var(--color__gray__600);
+
+  /* Chart Colors (Menggunakan nilai langsung dari Global Tokens) */
+  --colors__chart__gray__Gray1: var(--color__gray__25);
+  /* ... sisa Chart Colors ... */
+  --colors__chart__gray__Gray12: var(--color__gray__900);
+  --colors__chart__blue__Blue1: var(--color__blue__25);
+  --colors__chart__blue__Blue12: var(--color__blue__900);
+  --colors__chart__green__Green1: var(--color__green__25);
+  --colors__chart__green__Green12: var(--color__green__900);
+  --colors__chart__yellow__Yellow1: var(--color__yellow__25);
+  --colors__chart__yellow__Yellow12: var(--color__yellow__900);
+  --colors__chart__red__Red1: var(--color__red__25);
+  --colors__chart__red__Red12: var(--color__red__900);
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-primary-300);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-primary-400);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-surface-900);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--color-primary-300);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+  }
+  a:hover {
+    color: var(--color-primary-400);
+  }
+  button {
+    background-color: var(--color-surface-25);
+  }
+}
