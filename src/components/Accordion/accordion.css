@@ -1,20 +1,17 @@
-/* Container Utama */
-.accordion-container {
+.nile-accordion-container {
   display: flex;
   flex-direction: column;
   gap: var(--size__16);
-  width: 100vh;
+  min-width: 500px;
 }
 
-/* Item Individual */
-.accordion-item {
+.nile-accordion-item {
   border: 1px solid var(--colors__border__primary__borderprimaryhigh);
   border-radius: var(--size__12);
   overflow: hidden;
 }
 
-/* Tombol Judul (Area yang Padding-nya Berubah) */
-.accordion-header {
+.nile-accordion-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,32 +21,24 @@
   padding-inline: var(--size__16);
 }
 
-/* --- KONDISI PADDING HEADER (JUDUL + SUBTEXT) --- */
-
-/* 1. Ketika COLLAPSED (Default) */
-.accordion-item .accordion-header {
-  /* Padding Vertikal Collapsed: 12px atas dan bawah */
+.nile-accordion-item .nile-accordion-header {
   padding-top: var(--size__12);
   padding-bottom: var(--size__12);
 }
 
-/* 2. Ketika EXPANDED (Item MEMILIKI kelas .open) */
-.accordion-item.open .accordion-header {
-  /* Padding Vertikal Expanded: 16px atas dan bawah */
+.nile-accordion-item.open .nile-accordion-header {
   padding-top: var(--size__16);
   padding-bottom: var(--size__16);
 }
 
-/* --- STYLING SUBTEXT & ANIMASI KONTEN --- */
-
-.accordion-header-text {
+.nile-accordion-header-text {
   display: flex;
   flex-direction: column;
   gap: var(--size__4);
   width: 100%;
 }
 
-.accordion-header-text .title {
+.nile-accordion-header-text .title {
   color: var(--colors__text__primary__texttitle);
   font-size: var(--typescale__16__size);
   line-height: var(--typescale__16__lineheight);
@@ -57,34 +46,29 @@
   letter-spacing: var(--typescale__16__tracking);
 }
 
-.accordion-header-text .subtext {
+.nile-accordion-header-text .subtext {
   color: var(--colors__text__primary__textbody);
   font-size: var(--typescale__14__size);
   line-height: var(--typescale__14__lineheight);
   letter-spacing: var(--typescale__14__tracking);
 }
 
-/* Ikon */
 .accordion-icon {
   display: flex;
   justify-content: center;
 }
 
-/* KUNCI ANIMASI SMOOTH: Wrapper Konten */
-.accordion-content-wrapper {
-  /* Durasi transisi 0.4 detik dengan fungsi ease-in-out (halus) */
+.nile-accordion-content-wrapper {
   transition: max-height 0.4s ease-in-out;
-  overflow: hidden; /* Penting untuk menyembunyikan konten saat max-height = 0 */
-  max-height: 0; /* Tertutup secara default */
+  overflow: hidden;
+  max-height: 0;
 }
 
-/* Ketika Terbuka */
-.accordion-item.open .accordion-content-wrapper {
-  max-height: 500px; /* Nilai besar untuk memungkinkan konten terlihat penuh */
+.nile-accordion-item.open .nile-accordion-content-wrapper {
+  max-height: 500px;
 }
 
-/* Konten Sebenarnya */
-.accordion-content {
+.nile-accordion-content {
   padding: 0 var(--size__16) var(--size__16) var(--size__16);
 }
 

@@ -5,8 +5,6 @@ import {
 } from "../components/Accordion/Accordion";
 import { AccordionContent } from "../components/Accordion/AccordionContent";
 
-// --- Data Sampel ---
-
 const defaultItems: AccordionItemData[] = [
   {
     id: "1",
@@ -34,7 +32,7 @@ const defaultItems: AccordionItemData[] = [
   },
 ];
 
-// --- Metadata Komponen Storybook ---
+// --- Metadata Storybook Components ---
 
 const meta: Meta<typeof Accordion> = {
   title: "Nile Component/Accordion",
@@ -58,10 +56,7 @@ type Story = StoryObj<typeof meta>;
 
 // --- Stories ---
 
-/**
- * Story default: Mode Single Open (hanya satu item yang dapat dibuka).
- * Menggunakan render dan key untuk memastikan state direset saat prop allowMultipleOpen diubah.
- */
+// Single Open Story
 export const SingleOpen: Story = {
   args: {
     allowMultipleOpen: false,
@@ -70,15 +65,12 @@ export const SingleOpen: Story = {
   render: (args) => (
     <Accordion
       {...args}
-      // Key memastikan komponen di-reset saat mode berubah, mencegah error 'includes'
       key={args.allowMultipleOpen ? "multiple" : "single"}
     />
   ),
 };
 
-/**
- * Story ini menunjukkan mode Multiple Open.
- */
+// Multiple Open Story
 export const MultipleOpen: Story = {
   args: {
     allowMultipleOpen: true,
@@ -87,15 +79,12 @@ export const MultipleOpen: Story = {
   render: (args) => (
     <Accordion
       {...args}
-      // Key memastikan komponen di-reset saat mode berubah
       key={args.allowMultipleOpen ? "multiple" : "single"}
     />
   ),
 };
 
-/**
- * Menunjukkan Akordeon dengan kelas kustom untuk styling.
- */
+// Custom Class Story
 export const CustomClass: Story = {
   args: {
     items: defaultItems,

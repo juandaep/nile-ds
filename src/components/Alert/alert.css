@@ -13,20 +13,18 @@
   display: flex;
   flex: 1 0 0;
 }
-/* Icon before children */
+
 .nile-alert__icon {
   display: flex;
   align-items: center;
   margin-right: var(--spacing-size-12, 12px);
   flex-shrink: 0;
 }
-/* .nile-alert__title {
-  font-weight: (var(--typeface__weight__Medium));
-} */
+
 .nile-alert__body {
   font-size: var(--typescale__14__size);
   font-weight: var(--typeface__weight__Medium);
-  line-height: var(--typescale__14__lineheight); /* 142.857% */
+  line-height: var(--typescale__14__lineheight);
   letter-spacing: var(--typescale__14__tracking);
 }
 
@@ -48,7 +46,6 @@
   cursor: pointer;
 }
 
-/* Variants (use tokens) */
 .nile-alert--info {
   background-color: var(--alert__info__alertbginfo);
   border-color: var(--alert__info__alertborderinfo);
@@ -70,7 +67,6 @@
   color: var(--alert__error__alerttexterror);
 }
 
-/* For show again the alert */
 .nile-alert__show-button {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.08);
