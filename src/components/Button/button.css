@@ -22,7 +22,7 @@
   font-size: var(--typescale__12__size);
   line-height: var(--typescale__12__lineheight);
   letter-spacing: var(--typescale__12__tracking);
-  border-radius: var(--size__6);
+  border-radius: var(--rounded-md);
   --nile-btn-icon-size: 16px;
 }
 .nile-btn--size-sm .nile-btn__text {
@@ -34,7 +34,7 @@
   font-size: var(--typescale__14__size);
   line-height: var(--typescale__14__lineheight);
   letter-spacing: var(--typescale__14__tracking);
-  border-radius: var(--size__8);
+  border-radius: var(--rounded-lg);
   --nile-btn-icon-size: 20px;
 }
 .nile-btn--size-md .nile-btn__text {
@@ -46,7 +46,7 @@
   font-size: var(--typescale__16__size);
   line-height: var(--typescale__16__lineheight);
   letter-spacing: var(--typescale__16__tracking);
-  border-radius: var(--size__8);
+  border-radius: var(--rounded-lg);
   --nile-btn-icon-size: 24px;
 }
 .nile-btn--size-lg .nile-btn__text {

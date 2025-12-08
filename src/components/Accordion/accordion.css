@@ -7,7 +7,7 @@
 
 .nile-accordion-item {
   border: 1px solid var(--colors__border__primary__borderprimaryhigh);
-  border-radius: var(--size__12);
+  border-radius: var(--rounded-xl);
   overflow: hidden;
 }
 
@@ -81,7 +81,7 @@
   background: var(--colors__surface__info__fginfolow);
   align-self: stretch;
   height: 120px;
-  border-radius: var(--size__8);
+  border-radius: var(--rounded-lg);
 }
 
 .content-dummy-wrapper p {

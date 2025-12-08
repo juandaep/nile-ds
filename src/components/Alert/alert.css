@@ -5,7 +5,7 @@
   max-width: 484px;
   padding: var(--spacing-size-12, 12px) var(--spacing-size-16, 16px);
   gap: var(--spacing-size-12, 12px);
-  border-radius: var(--size__8);
+  border-radius: var(--rounded-lg);
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   border: 1px solid transparent;
 }
@@ -71,7 +71,7 @@
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 6px 10px;
-  border-radius: 6px;
+  border-radius: var(--rounded-md);
   cursor: pointer;
   font-size: 13px;
   color: #000000;

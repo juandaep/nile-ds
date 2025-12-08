@@ -1,0 +1,125 @@
+.nile-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--typescale__10__size);
+  line-height: var(--typescale__10__lineheight);
+  letter-spacing: var(--typescale__10__tracking);
+  font-weight: var(--typeface__weight__SemiBold);
+  border-radius: var(--rounded-full);
+  min-width: var(--size__16);
+  height: var(--size__16);
+  box-sizing: border-box;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nile-badge--dot {
+  width: var(--size__8);
+  min-width: var(--size__8);
+  height: var(--size__8);
+  padding: 0;
+}
+
+.nile-badge--number,
+.nile-badge--text {
+  min-width: var(--size__16);
+  height: var(--size__16);
+  padding: 0 var(--size__4);
+}
+
+/* Red */
+.nile-badge--red {
+  background-color: var(--badge__background__badgebgred);
+  color: var(--badge__text__badgetext);
+}
+.nile-badge--dot.nile-badge--red {
+  background-color: var(--badge__background__badgebgred);
+}
+
+/* Green */
+.nile-badge--green {
+  background-color: var(--badge__background__badgebggreen);
+  color: var(--badge__text__badgetext);
+}
+.nile-badge--dot.nile-badge--green {
+  background-color: var(--badge__background__badgebggreen);
+}
+
+/* Blue */
+.nile-badge--blue {
+  background-color: var(--badge__background__badgebgblue);
+  color: var(--badge__text__badgetext);
+}
+.nile-badge--dot.nile-badge--blue {
+  background-color: var(--badge__background__badgebgblue);
+}
+
+/* Grey */
+.nile-badge--grey {
+  background-color: var(--badge__background__badgebggrey);
+  color: var(--badge__text__badgetext);
+}
+.nile-badge--dot.nile-badge--grey {
+  background-color: var(--badge__background__badgebggrey);
+}
+
+/* White */
+.nile-badge--white {
+  background-color: var(--badge__background__badgebgwhite);
+  color: var(--badge__text__badgetextinv);
+}
+.nile-badge--dot.nile-badge--white {
+  background-color: var(--badge__background__badgebgwhite);
+}
+
+/* Black */
+.nile-badge--black {
+  background-color: var(--badge__background__badgebgblack);
+  color: var(--badge__text__badgetext);
+}
+.nile-badge--dot.nile-badge--black {
+  var(--badge__background__badgebgwhite);
+}
+
+.nile-badge-container--wrapped {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.nile-badge-wrapper {
+  position: absolute;
+  z-index: 10;
+}
+
+/* top-right */
+.nile-badge-wrapper--top-right {
+  top: -8px;
+  right: -8px;
+}
+.nile-badge-wrapper--top-right .nile-badge--dot {
+  top: -4px;
+  right: -4px;
+}
+
+/* top-left */
+.nile-badge-wrapper--top-left {
+  top: -8px;
+  left: -8px;
+}
+.nile-badge-wrapper--top-left .nile-badge--dot {
+  top: -4px;
+  left: -4px;
+}
+
+/* bottom-right */
+.nile-badge-wrapper--bottom-right {
+  bottom: -8px;
+  right: -8px;
+}
+
+/* bottom-left */
+.nile-badge-wrapper--bottom-left {
+  bottom: -8px;
+  left: -8px;
+}
