@@ -1,7 +1,7 @@
 // src/components/Badge/Badge.tsx
 
 import type { ReactNode } from 'react';
-import './Badge.css'; 
+import './badge.css'; 
 
 export type BadgeType = 'Dot' | 'Number' | 'Text'; 
 export type BadgeColor = 'Red' | 'Green' | 'Blue' | 'Grey' | 'White' | 'Black';
