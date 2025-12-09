@@ -327,46 +327,38 @@
   --banner__error__border__bannerborder: var(--color__red__400);
   --banner__error__border__bannerborderlow: var(--color__red__100);
   --banner__error__text__bannertexttitle: var(--color__red__500);
-  --banner__error__text__bannertextsubtitle: var(--color__grey__700);
-  --banner__error__icon__bannericondismiss: var(--color__grey__300);
   --banner__error__icon__bannericonerror: var(--color__red__500);
-
+  
   /* Banner (Info) */
   --banner__info__background__bannerbg: var(--color__blue__25);
   --banner__info__border__bannerborder: var(--color__blue__400);
   --banner__info__border__bannerborderlow: var(--color__blue__100);
   --banner__info__text__bannertexttitle: var(--color__blue__500);
-  --banner__info__text__bannertextsubtitle: var(--color__grey__700);
-  --banner__info__icon__bannericondismiss: var(--color__grey__400);
   --banner__info__icon__bannericoninfo: var(--color__blue__500);
-
+  
   /* Banner (Success) */
   --banner__success__background__bannerbg: var(--color__green__25);
   --banner__success__border__bannerborder: var(--color__green__400);
   --banner__success__border__bannerborderlow: var(--color__green__100);
   --banner__success__text__bannertexttitle: var(--color__green__600);
   --banner__success__icon__bannericonsuccess: var(--color__green__500);
-  --banner__success__text__bannertextsubtitle: var(--color__grey__700);
-  --banner__success__icon__bannericondismiss: var(--color__grey__400);
-
+  
   /* Banner (Warning) */
   --banner__warning__background__bannerbg: var(--color__yellow__25);
   --banner__warning__border__bannerborder: var(--color__yellow__400);
   --banner__warning__border__bannerborderlow: var(--color__yellow__100);
   --banner__warning__text__bannertexttitle: var(--color__yellow__800);
   --banner__warning__icon__bannericonwarning: var(--color__yellow__800);
-  --banner__warning__text__bannertextsubtitle: var(--color__grey__700);
-  --banner__warning__icon__bannericondismiss: var(--color__grey__400);
-
+  
   /* Banner (General/Default) */
   --banner__general__background__bannerbg: var(--color__grey__25);
   --banner__general__border__bannerborder: var(--color__grey__400);
   --banner__general__border__bannerborderlow: var(--color__grey__100);
-  --banner__general__icon__bannericoninfo: var(--color__grey__500);
-  --banner__general__icon__bannericondismiss: var(--color__grey__400);
-  --banner__general__text__bannertexttitle: var(--color__grey__500);
-  --banner__general__text__bannertextsubtitle: var(--color__grey__700);
-
+  --banner__general__text__bannertexttitle: var(--color__grey__800);
+  
+  --banner__icon__bannericondismiss: var(--color__grey__300);
+  --banner__text__bannertextsubtitle: var(--color__grey__600);
+  
   /* Badge */
   --badge__background__badgebgred: var(--color__red__400);
   --badge__background__badgebggreen: var(--color__green__500);

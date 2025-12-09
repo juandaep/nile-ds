@@ -78,7 +78,7 @@
   color: var(--badge__text__badgetext);
 }
 .nile-badge--dot.nile-badge--black {
-  var(--badge__background__badgebgwhite);
+  background-color: var(--badge__background__badgebgblack);
 }
 
 .nile-badge-container--wrapped {
