@@ -3,7 +3,7 @@ import { fn } from 'storybook/test';
 import Button from '../components/Button/Button';
 
 const meta: Meta<typeof Button> = {
-  title: 'Nile Component/Button',
+  title: 'Nile Components/Button',
   component: Button,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],

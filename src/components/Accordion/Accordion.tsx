@@ -1,33 +1,8 @@
-import React, { useState, type ReactNode } from "react";
-import "./accordion.css";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons";
-
-export type AccordionItemData = {
-  id: string;
-  title: string;
-  subtext?: string;
-  content: ReactNode;
-};
-
-type OpenState = string | null | string[];
-
-export interface AccordionProps {
-  items: AccordionItemData[];
-  /** Optional class name for container styling. */
-  className?: string;
-  /** If true, allows multiple accordion items to be open simultaneously. Default is false. */
-  allowMultipleOpen?: boolean;
-}
-
-interface AccordionItemProps {
-  id: string;
-  title: string;
-  subtext?: string;
-  isOpen: boolean;
-  onClick: (id: string) => void;
-  children: ReactNode;
-}
+import { HugeiconsIcon } from "@hugeicons/react";
+import React, { useState } from "react";
+import "./accordion.css";
+import type { AccordionItemProps, AccordionProps, OpenState } from "./Accordion.types";
 
 const AccordionItem: React.FC<AccordionItemProps> = ({
   id,
@@ -59,9 +34,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         </span>
       </div>
 
-      <div
-        className="nile-accordion-content-wrapper"
-      >
+      <div className="nile-accordion-content-wrapper">
         <div className="nile-accordion-content">{children}</div>
       </div>
     </div>

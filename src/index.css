@@ -626,3 +626,7 @@ h1 {
     background-color: var(--color-surface-25);
   }
 }
+
+.sbdocs.sbdocs-wrapper {
+    min-width: 680px;
+}

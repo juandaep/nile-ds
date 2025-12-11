@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Banner from "../components/Banner/Banner";
 
 const meta: Meta<typeof Banner> = {
-  title: "Nile Component/Banner",
+  title: "Nile Components/Banner",
   component: Banner,
   tags: ["autodocs"],
   parameters: {

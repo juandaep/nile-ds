@@ -5,7 +5,7 @@ import { fn } from "storybook/test";
 import Alert from "../components/Alert/Alert";
 
 const meta = {
-  title: "Nile Component/Alert",
+  title: "Nile Components/Alert",
   component: Alert,
   parameters: {
     layout: "centered",
