@@ -102,9 +102,12 @@ export const Banner = ({
 
       <div className="nile-banner__trailing-actions">
         {showTrailButton && (
-          <Button size="sm" variant="tertiary" onClick={onTrailButton}>
-            Upgrade
-          </Button>
+          <Button
+            size="sm"
+            variant="tertiary"
+            text="Upgrade"
+            onClick={onTrailButton}
+          />
         )}
         {dismissible ? (
           <span
@@ -127,12 +130,18 @@ export const Banner = ({
 
       {showFooterButtons && (
         <div className="nile-banner__footer">
-          <Button size="sm" variant="ghost" onClick={handleDismiss}>
-            Cancel
-          </Button>
-          <Button size="sm" variant="primary" onClick={onTryAgain}>
-            Try Again
-          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            text="Cancel"
+            onClick={handleDismiss}
+          />
+          <Button
+            size="sm"
+            variant="primary"
+            text="Try Again"
+            onClick={onTryAgain}
+          />
         </div>
       )}
     </div>

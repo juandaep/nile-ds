@@ -1,0 +1,51 @@
+.nile-breadcrumb__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: var(--typescale__12__size);
+  line-height: var(--typescale__12__lineheight);
+  letter-spacing: var(--typescale__12__tracking);
+}
+
+.nile-breadcrumb__item {
+  display: flex;
+  align-items: center;
+}
+
+.nile-breadcrumb__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--colors__text__primary__textbody);
+  white-space: nowrap;
+}
+.nile-breadcrumb__link:hover {
+  color: var(--colors__text__primary__texttitle);
+  transition: color 0.1s ease-in-out;
+}
+
+.nile-breadcrumb__last-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--typeface__weight__SemiBold);
+}
+
+.nile-breadcrumb__separator {
+  margin: var(--size__0) var(--size__8);
+  color: var(--colors__text__primary__textlabel);
+  display: flex;
+  align-items: center;
+}
+
+.nile-breadcrumb__arrow-back {
+  display: flex;
+  align-items: center;
+  margin-right: var(--size__8);
+  color: inherit;
+}
+
+.nle-breadcrumb__elipsis {
+  color: var(--colors__text__primary__textlabel);
+}

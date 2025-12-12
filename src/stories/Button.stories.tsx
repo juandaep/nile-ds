@@ -86,15 +86,9 @@ export const Secondary: Story = {
 export const Sizes: Story = {
   render: () => (
     <div style={{ display: "flex", gap: 12 }}>
-      <Button size="sm" variant="primary">
-        Small
-      </Button>
-      <Button size="md" variant="primary">
-        Medium
-      </Button>
-      <Button size="lg" variant="primary">
-        Large
-      </Button>
+      <Button size="sm" text="Small" variant="primary" />
+      <Button size="md" text="Medium" variant="primary" />
+      <Button size="lg" text="Large" variant="primary" />
     </div>
   ),
   name: "3. Size Variations",
