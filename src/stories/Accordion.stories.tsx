@@ -11,45 +11,63 @@ interface AccordionStoryArgs extends AccordionProps {
 const generateItems = (title: string, subtext: string): AccordionItemData[] => [
   {
     id: "1",
-    title: `${title}`, 
-    subtext: `${subtext}`,
+    title: `${title} - Item 1`,
+    subtext: `${subtext} A`,
     content: <AccordionContent key="content-1" />,
   },
   {
     id: "2",
-    title: `${title}`,
-    subtext: `${subtext}`,
+    title: `${title} - Item 2`,
+    subtext: `${subtext} B`,
     content: <AccordionContent key="content-2" />,
   },
   {
     id: "3",
-    title: `${title}`,
+    title: `${title} - Item 3`,
     content: <AccordionContent key="content-3" />,
   },
 ];
 
+// --- Metadata Storybook Components (CSF3) ---
 const meta: Meta<AccordionStoryArgs> = {
   component: Accordion, 
   title: "Nile Components/Accordion",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+        description: {
+            component: 'Accordion is used for showing and hiding content but only one item can stay open at a time.',
+        },
+    },
+  },
   
   argTypes: {
     titleContent: {
-      description: "Teks judul dasar untuk semua item.",
+      description: "Base title text used for generating all accordion items.",
       control: "text",
     },
     subtextContent: {
-      description: "Teks subjudul dasar untuk semua item.",
+      description: "Base subtext/description used for generating all accordion items.",
       control: "text",
     },
-    allowMultipleOpen: { control: "boolean" },
-    className: { control: 'text' },
-    items: { control: false },
+    allowMultipleOpen: { 
+        control: "boolean",
+        description: "If TRUE, multiple panels can be expanded simultaneously. If FALSE (default), only one panel can be open at a time." 
+    },
+    className: { 
+        control: 'text',
+        description: "Optional custom CSS class for the main container."
+    },
+    items: { 
+        control: false,
+        description: "The array of item data rendered by the component (controlled internally by Storybook controls).",
+        table: { category: "Fn"}
+    },
   },
   
   args: {
-    titleContent: "Accordion title",
-    subtextContent: "Accordion subtext/description",
+    titleContent: "Accordion Title",
+    subtextContent: "Accordion Subtext/Description",
     allowMultipleOpen: false,
     className: '',
   }
@@ -76,6 +94,7 @@ export const SingleOpen: Story = {
             />
         );
     },
+    name: "1. Single Open Mode",
 };
 
 export const MultipleOpen: Story = {
@@ -83,4 +102,5 @@ export const MultipleOpen: Story = {
         allowMultipleOpen: true,
     },
     render: SingleOpen.render,
+    name: "2. Multiple Open Mode",
 };

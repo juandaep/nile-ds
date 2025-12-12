@@ -1,31 +1,31 @@
 import { ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import "./accordion.css";
 import type { AccordionItemProps, AccordionProps, OpenState } from "./Accordion.types";
 
-const AccordionItem: React.FC<AccordionItemProps> = ({
+const AccordionItem = ({
   id,
   title,
   subtext,
   isOpen,
   onClick,
   children,
-}) => {
+}: AccordionItemProps) => {
   const toggleOpen = () => onClick(id);
 
   return (
-    <div className={`nile-accordion-item ${isOpen ? "open" : ""}`}>
+    <div className={`nile-accordion__item ${isOpen ? "open" : ""}`}>
       <div
-        className="nile-accordion-header"
+        className="nile-accordion__header"
         onClick={toggleOpen}
         aria-expanded={isOpen}
       >
-        <div className="nile-accordion-header-text">
-          <div className="title">{title}</div>
-          {subtext && <div className="subtext">{subtext}</div>}
+        <div className="nile-accordion-header__text-wrapper">
+          <div className="nile-accordion__title">{title}</div>
+          {subtext && <div className="nile-accordion__subtext">{subtext}</div>}
         </div>
-        <span className="accordion-icon">
+        <span className="nile-accordion__icon">
           {isOpen ? (
             <HugeiconsIcon icon={ArrowUp01Icon} size={24} />
           ) : (
@@ -34,18 +34,18 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         </span>
       </div>
 
-      <div className="nile-accordion-content-wrapper">
-        <div className="nile-accordion-content">{children}</div>
+      <div className="nile-accordion__content-wrapper">
+        <div className="nile-accordion__content">{children}</div>
       </div>
     </div>
   );
 };
 
-export const Accordion: React.FC<AccordionProps> = ({
+export const Accordion = ({
   items,
   className = "",
   allowMultipleOpen = false,
-}) => {
+}: AccordionProps) => { 
   const [openState, setOpenState] = useState<OpenState>(
     allowMultipleOpen ? [] : null
   );
@@ -72,7 +72,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div className={`nile-accordion-container ${className}`}>
+    <div className={`nile-accordion__container ${className}`}>
       {items.map((item) => {
         let isOpen = false;
 

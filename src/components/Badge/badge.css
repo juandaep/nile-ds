@@ -81,45 +81,45 @@
   background-color: var(--badge__background__badgebgblack);
 }
 
-.nile-badge-container--wrapped {
+.nile-badge__container-wrapped {
   position: relative;
   display: inline-block;
   line-height: 0;
 }
 
-.nile-badge-wrapper {
+.nile-badge__wrapper {
   position: absolute;
   z-index: 10;
 }
 
 /* top-right */
-.nile-badge-wrapper--top-right {
+.nile-badge__wrapper--top-right {
   top: -8px;
   right: -8px;
 }
-.nile-badge-wrapper--top-right .nile-badge--dot {
+.nile-badge__wrapper--top-right .nile-badge--dot {
   top: -4px;
   right: -4px;
 }
 
 /* top-left */
-.nile-badge-wrapper--top-left {
+.nile-badge__wrapper--top-left {
   top: -8px;
   left: -8px;
 }
-.nile-badge-wrapper--top-left .nile-badge--dot {
+.nile-badge__wrapper--top-left .nile-badge--dot {
   top: -4px;
   left: -4px;
 }
 
 /* bottom-right */
-.nile-badge-wrapper--bottom-right {
+.nile-badge__wrapper--bottom-right {
   bottom: -8px;
   right: -8px;
 }
 
 /* bottom-left */
-.nile-badge-wrapper--bottom-left {
+.nile-badge__wrapper--bottom-left {
   bottom: -8px;
   left: -8px;
 }

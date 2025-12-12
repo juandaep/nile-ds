@@ -9,6 +9,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import "./alert.css";
 import { HugeiconsIcon } from "@hugeicons/react";
+import type { AlertProps } from "./Alert.types";
 
 function renderIcon(variant: AlertVariant, size = 20) {
   const iconData =
@@ -37,20 +38,6 @@ function renderIcon(variant: AlertVariant, size = 20) {
 
 export type AlertVariant = "info" | "success" | "warning" | "danger";
 
-export interface AlertProps {
-  /** Visual variant */
-  variant?: AlertVariant;
-  /** Optional title shown above the message */
-  // title?: string;
-  /** Content of the alert */
-  children?: React.ReactNode;
-  /** Show a close button */
-  dismissible?: boolean;
-  /** Called when the close button is clicked */
-  onClose?: () => void;
-}
-
-/** Lightweight Alert component used in Storybook examples */
 export const Alert = ({
   variant = "info",
   children,

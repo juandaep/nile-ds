@@ -7,17 +7,22 @@ const meta: Meta<typeof Banner> = {
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: "A banner displays a prominent message",
+      },
+    },
   },
   argTypes: {
     variant: {
       control: "select",
       options: ["info", "success", "warning", "error", "general"],
-      description: "Status warna dan ikon banner.",
+      description: "Status color and banner icon",
     },
     designType: {
       control: "select",
       options: ["outlined", "side-border"],
-      description: "Gaya visual banner. Default: outlined.",
+      description: "Banner visual style. Default: outlined.",
     },
     title: { control: "text", description: "Banner title." },
     children: { control: "text", description: "Banner message." },
@@ -34,9 +39,24 @@ const meta: Meta<typeof Banner> = {
       control: "boolean",
       description: "Display trail button",
     },
-    onCancel: { action: "Canceled/Dismissed" },
-    onTryAgain: { action: "Try Again Clicked" },
-    onTrailButton: { action: "Upgrade Clicked" },
+    onCancel: {
+      action: "Canceled/Dismissed",
+      description:
+        "Function called when the banner is dismissed via the close button or footer 'Cancel' button.",
+      table: { category: "Fn" },
+    },
+    onTryAgain: {
+      action: "Try Again Clicked",
+      description:
+        "Function called when the footer 'Try Again' button is clicked.",
+      table: { category: "Fn" },
+    },
+    onTrailButton: {
+      action: "Upgrade Clicked",
+      description:
+        "Function called when the trailing (e.g., 'Upgrade') button is clicked.",
+      table: { category: "Fn" },
+    },
   },
 };
 
@@ -60,6 +80,7 @@ export const InfoOutlined: Story = {
     variant: "info",
     designType: "outlined",
   },
+  name: "1. Info - Outlined Default Actions",
 };
 
 export const SuccessSideBorderNoFooter: Story = {
@@ -72,6 +93,7 @@ export const SuccessSideBorderNoFooter: Story = {
     showFooterButtons: false,
     showTrailButton: false,
   },
+  name: "2. Success - Side Border Minimal",
 };
 
 export const ErrorWithUpgradeAndFooter: Story = {
@@ -85,6 +107,7 @@ export const ErrorWithUpgradeAndFooter: Story = {
     showTrailButton: true,
     showFooterButtons: true,
   },
+  name: "3. Error - Full Interactive",
 };
 
 export const WarningPersistent: Story = {
@@ -98,6 +121,7 @@ export const WarningPersistent: Story = {
     showTrailButton: false,
     showFooterButtons: false,
   },
+  name: "4. Warning - Persistent/Non-Dismissible",
 };
 
 export const GeneralMinimal: Story = {
@@ -111,4 +135,5 @@ export const GeneralMinimal: Story = {
     showTrailButton: false,
     showFooterButtons: false,
   },
+  name: "5. General - Minimal Announcement",
 };

@@ -98,11 +98,27 @@
   color: var(--button__danger__text__btntexthover);
 }
 
-.nile-btn.is-disabled {
-  opacity: 0.5;
+.nile-btn--primary.is-disabled,
+.nile-btn--secondary.is-disabled,
+.nile-btn--danger.is-disabled {
+  background: var(--button__primary__background__btnbgdisable);
+  color: var(--button__primary__text__btntextdisable);
   cursor: not-allowed;
   pointer-events: none;
 }
+.nile-btn--tertiary.is-disabled {
+  color: var(--button__primary__text__btntextdisable);
+  outline: 1px solid var(--button__tertiary__border__btnborderdisable);
+  outline-offset: -1px;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.nile-btn--ghost.is-disabled {
+  color: var(--button__primary__text__btntextdisable);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 
 /* Icon / text layout */
 .nile-btn__lead,
@@ -194,8 +210,6 @@
   border: 2px solid rgba(220, 38, 38, 0.25);
   border-top-color: rgba(220, 38, 38, 0.9);
 }
-
-/* When danger button is hovered, spinner should be white for contrast */
 .nile-btn--danger:hover .nile-btn__spinner {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: rgba(255, 255, 255, 0.9);

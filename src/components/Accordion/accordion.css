@@ -1,17 +1,17 @@
-.nile-accordion-container {
+.nile-accordion__container {
   display: flex;
   flex-direction: column;
   gap: var(--size__16);
   min-width: 500px;
 }
 
-.nile-accordion-item {
+.nile-accordion__item {
   border: 1px solid var(--colors__border__primary__borderprimaryhigh);
   border-radius: var(--rounded-xl);
   overflow: hidden;
 }
 
-.nile-accordion-header {
+.nile-accordion__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,24 +21,24 @@
   padding-inline: var(--size__16);
 }
 
-.nile-accordion-item .nile-accordion-header {
+.nile-accordion__item .nile-accordion__header {
   padding-top: var(--size__12);
   padding-bottom: var(--size__12);
 }
 
-.nile-accordion-item.open .nile-accordion-header {
+.nile-accordion__item.open .nile-accordion__header {
   padding-top: var(--size__16);
   padding-bottom: var(--size__16);
 }
 
-.nile-accordion-header-text {
+.nile-accordion-header__text-wrapper {
   display: flex;
   flex-direction: column;
   gap: var(--size__4);
   width: 100%;
 }
 
-.nile-accordion-header-text .title {
+.nile-accordion-header__text-wrapper .nile-accordion__title {
   color: var(--colors__text__primary__texttitle);
   font-size: var(--typescale__16__size);
   line-height: var(--typescale__16__lineheight);
@@ -46,29 +46,30 @@
   letter-spacing: var(--typescale__16__tracking);
 }
 
-.nile-accordion-header-text .subtext {
+.nile-accordion-header__text-wrapper .nile-accordion__subtext {
   color: var(--colors__text__primary__textbody);
   font-size: var(--typescale__14__size);
   line-height: var(--typescale__14__lineheight);
   letter-spacing: var(--typescale__14__tracking);
 }
 
-.accordion-icon {
+.nile-accordion__icon {
   display: flex;
   justify-content: center;
+  color: var(--colors__icon__iconlow)
 }
 
-.nile-accordion-content-wrapper {
+.nile-accordion__content-wrapper {
   transition: max-height 0.4s ease-in-out;
   overflow: hidden;
   max-height: 0;
 }
 
-.nile-accordion-item.open .nile-accordion-content-wrapper {
+.nile-accordion__item.open .nile-accordion__content-wrapper {
   max-height: 500px;
 }
 
-.nile-accordion-content {
+.nile-accordion__content {
   padding: 0 var(--size__16) var(--size__16) var(--size__16);
 }
 

@@ -5,19 +5,7 @@ import {
 } from '@hugeicons/core-free-icons';
 import React from 'react';
 import './button.css';
-
-export type ButtonSize = 'lg' | 'md' | 'sm';
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger';
-export type ButtonOption = 'default' | 'loading' | 'icon-only';
-
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: ButtonSize;
-  variant?: ButtonVariant;
-  option?: ButtonOption;
-  leadIcon?: boolean;
-  trailIcon?: boolean;
-  children?: React.ReactNode;
-}
+import type { ButtonProps } from './Button.types';
 
 function renderIconDef(def: readonly any[], size = 16) {
   return (
@@ -48,7 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       option = 'default',
       leadIcon = false,
       trailIcon = false,
-      children,
+      text,
       disabled,
       ...rest
     },
@@ -104,7 +92,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {option === 'loading' ? (
           <span className="nile-btn__spinner" aria-hidden />
         ) : (
-          <span className="nile-btn__text">{children}</span>
+          <span className="nile-btn__text">{text}</span>
         )}
 
         {/* Trail icon (only if not icon-only) */}

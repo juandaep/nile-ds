@@ -1,70 +1,51 @@
-// src/components/Badge/Badge.tsx
+import "./badge.css";
+import type { BadgeProps, BadgeType, BadgeValue } from "./Badge.type";
 
-import type { ReactNode } from 'react';
-import './badge.css'; 
-
-export type BadgeType = 'Dot' | 'Number' | 'Text'; 
-export type BadgeColor = 'Red' | 'Green' | 'Blue' | 'Grey' | 'White' | 'Black';
-export type BadgeValue = number | string;
-
-interface BadgeProps {
-  type: BadgeType;
-  color: BadgeColor;
-  value?: BadgeValue; 
-  children?: ReactNode; 
-  position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
-}
-
-const Badge: React.FC<BadgeProps> = ({ 
-  type, 
-  color, 
-  value, 
+export const Badge = ({
+  type,
+  color,
+  value,
   children,
-  position = 'top-right' 
-}) => {
-  
+  position = "top-right",
+}: BadgeProps) => {
   const defaultValues: Record<BadgeType, BadgeValue> = {
-    'Number': 2, 
-    'Text': 'New', 
-    'Dot': '',
+    Number: 2,
+    Text: "New",
+    Dot: "",
   };
-  
-  const displayValue = (
-    type !== 'Dot' && value === undefined 
-    ? defaultValues[type] 
-    : value
-  );
 
-  const badgeClassName = `nile-badge nile-badge--${color.toLowerCase()} nile-badge--${type.replace(/\s+/g, '-').toLowerCase()}`;
+  const displayValue =
+    type !== "Dot" && value === undefined ? defaultValues[type] : value;
+
+  const badgeClassName = `nile-badge nile-badge--${color.toLowerCase()} nile-badge--${type
+    .replace(/\s+/g, "-")
+    .toLowerCase()}`;
 
   const renderContent = () => {
     switch (type) {
-      case 'Dot':
-        return null; 
-      case 'Number':
-      case 'Text':
-        return <span>{displayValue}</span>; 
+      case "Dot":
+        return null;
+      case "Number":
+      case "Text":
+        return <span>{displayValue}</span>;
       default:
         return null;
     }
   };
 
   if (children) {
-    const wrapperClassName = `nile-badge-wrapper nile-badge-wrapper--${position}`;
-    
+    const wrapperClassName = `nile-badge__wrapper nile-badge__wrapper--${position}`;
+
     return (
-      <div className="nile-badge-container--wrapped">
+      <div className="nile-badge__container-wrapped">
         {children}
         <div className={wrapperClassName}>
-          <div className={badgeClassName}>
-            {renderContent()}
-          </div>
+          <div className={badgeClassName}>{renderContent()}</div>
         </div>
       </div>
     );
   }
 
-  // Mode Inline
   return <div className={badgeClassName}>{renderContent()}</div>;
 };
 

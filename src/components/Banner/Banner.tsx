@@ -10,36 +10,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import "./banner.css";
 import Button from "../Button/Button";
-
-export type BannerVariant =
-  | "info"
-  | "success"
-  | "warning"
-  | "error"
-  | "general";
-
-export interface BannerProps {
-  /** Visual variant: info, success, warning, error, general */
-  variant?: BannerVariant;
-  /** Design type: outlined (default) or side-border */
-  designType?: "side-border" | "outlined";
-  /** Main message of the banner (children) */
-  children?: React.ReactNode;
-  /** Optional title shown above the message (Judul) */
-  title?: string;
-  /** Show a close button (x) */
-  dismissible?: boolean;
-  /** Show footer action buttons (Cancel & Try again) */
-  showFooterButtons?: boolean;
-  /** Show the 'Upgrade' button */
-  showTrailButton?: boolean;
-  /** Action handler when Cancel/Dismiss button is clicked */
-  onCancel?: () => void;
-  /** Action handler when Try Again button is clicked */
-  onTryAgain?: () => void;
-  /** Action handler when Upgrade button is clicked */
-  onTrailButton?: () => void;
-}
+import type { BannerProps, BannerVariant } from "./Banner.types";
 
 function renderIcon(variant: BannerVariant, size = 20) {
   const iconData =

@@ -51,6 +51,7 @@
 .typeText {
   background-color: var(--colors__surface__info__bginfo);
   color: white;
+  text-transform: uppercase;
 }
 .typeIcon-filled {
   background-color: var(--colors__surface__info__fginfolow);

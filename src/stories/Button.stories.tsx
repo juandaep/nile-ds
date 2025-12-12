@@ -1,49 +1,115 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
-import Button from '../components/Button/Button';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
+import Button from "../components/Button/Button";
 
 const meta: Meta<typeof Button> = {
-  title: 'Nile Components/Button',
+  title: "Nile Components/Button",
   component: Button,
-  parameters: { layout: 'centered' },
-  tags: ['autodocs'],
-  argTypes: {
-    size: { control: { type: 'select' }, options: ['sm','md','lg'] },
-    variant: { control: { type: 'select' }, options: ['primary','secondary','tertiary','ghost','danger'] },
-    option: { control: { type: 'select' }, options: ['default','loading','icon-only'] },
-    leadIcon: { control: 'boolean' },
-    trailIcon: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-    children: { control: 'text' },
+  tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Buttons allow users to perform actions and choose with a single tap.",
+      },
+    },
   },
-  args: { onClick: fn(), size: 'md', variant: 'primary', option: 'default', children: 'Button' },
+
+  argTypes: {
+    size: {
+      control: { type: "select" },
+      options: ["sm", "md", "lg"],
+      description: "Defines the size of the button: small, medium, or large.",
+    },
+    variant: {
+      control: { type: "select" },
+      options: ["primary", "secondary", "tertiary", "ghost", "danger"],
+      description:
+        "Defines the visual style and hierarchy of the button (e.g., primary for main action, ghost for low-priority).",
+    },
+    option: {
+      control: { type: "select" },
+      options: ["default", "loading", "icon-only"],
+      description:
+        "Defines special states of the button, such as displaying a loading spinner or showing only an icon.",
+    },
+    leadIcon: {
+      control: "boolean",
+      description: "If TRUE, displays a default icon before the text.",
+    },
+    trailIcon: {
+      control: "boolean",
+      description: "If TRUE, displays a default icon after the text.",
+    },
+    disabled: {
+      control: "boolean",
+      description:
+        "If TRUE, the button is non-interactive and visually disabled.",
+    },
+    text: {
+      control: "text",
+      description: "The text label or content inside the button.",
+    },
+    onClick: {
+      description: "Callback function triggered when the button is clicked.",
+      table: { category: "Fn" },
+    },
+  },
+
+  args: {
+    onClick: fn(),
+    size: "md",
+    variant: "primary",
+    option: "default",
+    text: "Button",
+    leadIcon: false,
+    trailIcon: false,
+    disabled: false,
+  },
 };
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { children: 'Primary', variant: 'primary', size: 'md' },
+  args: { text: "Primary", variant: "primary", size: "md" },
+  name: "1. Primary Button",
 };
 
 export const Secondary: Story = {
-  args: { children: 'Secondary', variant: 'secondary', size: 'md' },
+  args: { text: "Secondary", variant: "secondary", size: "md" },
+  name: "2. Secondary Button",
 };
 
 export const Sizes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: 12 }}>
-      <Button size="sm" variant="primary">Small</Button>
-      <Button size="md" variant="primary">Medium</Button>
-      <Button size="lg" variant="primary">Large</Button>
+    <div style={{ display: "flex", gap: 12 }}>
+      <Button size="sm" variant="primary">
+        Small
+      </Button>
+      <Button size="md" variant="primary">
+        Medium
+      </Button>
+      <Button size="lg" variant="primary">
+        Large
+      </Button>
     </div>
   ),
+  name: "3. Size Variations",
 };
 
 export const IconOnly: Story = {
-  args: { option: 'icon-only', leadIcon: true },
+  args: {
+    option: "icon-only",
+    leadIcon: true,
+    text: "",
+  },
+  name: "4. Icon Only Button",
 };
 
 export const Loading: Story = {
-  args: { option: 'loading', children: 'Loading' },
+  args: { option: "loading", text: "Loading" },
+  name: "5. Loading State",
 };
