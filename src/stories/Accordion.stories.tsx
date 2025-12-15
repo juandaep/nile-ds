@@ -28,7 +28,6 @@ const generateItems = (title: string, subtext: string): AccordionItemData[] => [
   },
 ];
 
-// --- Metadata Storybook Components (CSF3) ---
 const meta: Meta<AccordionStoryArgs> = {
   component: Accordion, 
   title: "Nile Components/Accordion",
