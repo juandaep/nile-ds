@@ -34,6 +34,9 @@ const meta: Meta<AccordionStoryArgs> = {
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
+    controls: {
+      exclude: "className",
+    },
     docs: {
         description: {
             component: 'Accordion is used for showing and hiding content but only one item can stay open at a time.',

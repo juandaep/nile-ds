@@ -1,17 +1,17 @@
 import {
   AlignVerticalCenterFreeIcons,
   BankIcon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar } from "../components/Avatar/Avatar";
+} from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import type { Meta, StoryObj } from "@storybook/react"
+import { Avatar } from "../components/Avatar/Avatar"
 
-const DUMMY_PHOTO = "https://picsum.photos/48/48";
+const DUMMY_PHOTO = "https://picsum.photos/48/48"
 
 const getIconSize = (size: "sm" | "md" | "lg") => {
-  const map = { sm: 16, md: 20, lg: 24 };
-  return map[size];
-};
+  const map = { sm: 16, md: 20, lg: 24 }
+  return map[size]
+}
 
 const meta: Meta<typeof Avatar> = {
   title: "Nile Components/Avatar",
@@ -34,12 +34,12 @@ const meta: Meta<typeof Avatar> = {
       control: "radio",
       description: "Defines the width and height of the avatar (sm, md, lg).",
     },
-    text: {
+    initial: {
       control: "text",
       description: 'Initials or displayed text (only valid when type="text").',
       if: { 
           arg: 'type', 
-          eq: 'text'
+          eq: 'initial'
         }
     },
     photoUrl: {
@@ -61,13 +61,13 @@ const meta: Meta<typeof Avatar> = {
   args: {
     type: "initial",
     size: "md",
-    text: "kp",
+    initial: "kp",
   }
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Avatar>;
+type Story = StoryObj<typeof Avatar>
 
 export const ProfileWithPhoto: Story = {
   args: {
@@ -76,7 +76,7 @@ export const ProfileWithPhoto: Story = {
     photoUrl: DUMMY_PHOTO,
   },
   name: "1. Profile with Photo",
-};
+}
 
 export const ProfileFallback: Story = {
   args: {
@@ -85,16 +85,16 @@ export const ProfileFallback: Story = {
     photoUrl: undefined,
   },
   name: "2. Profile Fallback",
-};
+}
 
 export const TextInitials: Story = {
   args: {
     type: "initial",
     size: "md",
-    text: "JD",
+    initial: "JD",
   },
   name: "3. Text Initials",
-};
+}
 
 export const IconFilledDefault: Story = {
   args: {
@@ -102,7 +102,7 @@ export const IconFilledDefault: Story = {
     size: "lg",
   },
   name: "4. Icon Filled (Default)",
-};
+}
 
 export const IconOutlinedCustom: Story = {
   args: {
@@ -117,7 +117,7 @@ export const IconOutlinedCustom: Story = {
     ),
   },
   name: "5. Icon Outlined (Custom)",
-};
+}
 
 export const IconMultiple: Story = {
   args: {
@@ -144,4 +144,4 @@ export const IconMultiple: Story = {
       />
     </div>
   ),
-};
+}

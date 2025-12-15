@@ -68,7 +68,6 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-// Mendefinisikan ukuran ikon secara eksplisit
 const BellIcon = <HugeiconsIcon icon={Notification01Icon} size={24} />
 
 export const NumberDefault: Story = {

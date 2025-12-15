@@ -1,4 +1,7 @@
+import { BankFreeIcons, ImageNotFound01Icon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import React from "react"
+import classes from "./avatar.module.css"
 import type {
   AvatarChildProps,
   AvatarMultipleProps,
@@ -6,9 +9,6 @@ import type {
   AvatarSize,
   IconPlaceholderProps,
 } from "./Avatar.types"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { BankFreeIcons, ImageNotFound01Icon } from "@hugeicons/core-free-icons"
-import classes from "./avatar.module.css"
 
 const getIconSize = (size: AvatarSize): number => {
   const sizeMap: Record<AvatarSize, number> = {
@@ -45,18 +45,13 @@ const textSizeMap: Record<AvatarSize, string> = {
 }
 const typeClassMap: Record<string, string> = {
   profile: classes.profile,
-  text: classes.text,
+  initial: classes.initial,
   "icon-filled": classes.filled,
   "icon-outlined": classes.outlined,
 }
 
-const IconPlaceholder = ({ type, iconElement }: IconPlaceholderProps) => {
-  const isOutlined = type === "icon-outlined"
-  const style = isOutlined
-    ? { color: "var(--colors__icon__iconprominent)", display: "flex" }
-    : { display: "flex" }
-
-  return <div style={style}>{iconElement}</div>
+const IconPlaceholder = ({ iconElement }: IconPlaceholderProps) => {
+  return <>{iconElement}</>
 }
 
 const AvatarChild = ({ size, iconElement, childIndex }: AvatarChildProps) => {
@@ -96,7 +91,7 @@ const AvatarMultiple = ({ size, iconElement }: AvatarMultipleProps) => {
 export const Avatar = ({
   type,
   size,
-  text = "KP",
+  initial = "KP",
   photoUrl,
   icon,
 }: AvatarProps) => {
@@ -118,7 +113,7 @@ export const Avatar = ({
         if (photoUrl) {
           return <img src={photoUrl} alt="Profile" className={classes.photo} />
         } else {
-          contentClass = classes.typeIconOutlined
+          contentClass = classes.outlined
 
           return (
             <HugeiconsIcon
@@ -128,8 +123,8 @@ export const Avatar = ({
             />
           )
         }
-      case "text":
-        return <span className={textSizeMap[size]}>{text}</span>
+      case "initial":
+        return <span className={textSizeMap[size]}>{initial}</span>
       case "icon-filled":
       case "icon-outlined":
         return (

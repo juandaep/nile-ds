@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import Banner from "../components/Banner/Banner";
+import type { Meta, StoryObj } from "@storybook/react"
+import Banner from "../components/Banner/Banner"
 
 const meta: Meta<typeof Banner> = {
   title: "Nile Components/Banner",
@@ -58,10 +58,11 @@ const meta: Meta<typeof Banner> = {
       table: { category: "Fn" },
     },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof Banner>;
+export default meta
+
+type Story = StoryObj<typeof Banner>
 
 const defaultArgs = {
   title: "Banner Title",
@@ -72,7 +73,7 @@ const defaultArgs = {
   onCancel: () => console.log("Cancel clicked"),
   onTryAgain: () => console.log("Try Again clicked"),
   onTrailButton: () => console.log("Upgrade clicked"),
-};
+}
 
 export const InfoOutlined: Story = {
   args: {
@@ -81,7 +82,7 @@ export const InfoOutlined: Story = {
     designType: "outlined",
   },
   name: "1. Info - Outlined Default Actions",
-};
+}
 
 export const SuccessSideBorderNoFooter: Story = {
   args: {
@@ -94,7 +95,7 @@ export const SuccessSideBorderNoFooter: Story = {
     showTrailButton: false,
   },
   name: "2. Success - Side Border Minimal",
-};
+}
 
 export const ErrorWithUpgradeAndFooter: Story = {
   args: {
@@ -108,7 +109,7 @@ export const ErrorWithUpgradeAndFooter: Story = {
     showFooterButtons: true,
   },
   name: "3. Error - Full Interactive",
-};
+}
 
 export const WarningPersistent: Story = {
   args: {
@@ -122,7 +123,7 @@ export const WarningPersistent: Story = {
     showFooterButtons: false,
   },
   name: "4. Warning - Persistent/Non-Dismissible",
-};
+}
 
 export const GeneralMinimal: Story = {
   args: {
@@ -136,4 +137,4 @@ export const GeneralMinimal: Story = {
     showFooterButtons: false,
   },
   name: "5. General - Minimal Announcement",
-};
+}

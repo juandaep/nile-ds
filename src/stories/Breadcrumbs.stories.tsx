@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import type { BreadcrumbsProps } from "../components/Breadcrumbs/Breadcrumbs.types";
-import { Breadcrumbs } from "../components/Breadcrumbs/Breadcrumbs";
+import type { Meta, StoryObj } from "@storybook/react-vite"
+import type { BreadcrumbsProps } from "../components/Breadcrumbs/Breadcrumbs.types"
+import { Breadcrumbs } from "../components/Breadcrumbs/Breadcrumbs"
 
 const longMockItems = [
   { label: "Dashboard", href: "/" },
@@ -10,7 +10,7 @@ const longMockItems = [
   { label: "Designer", href: "/settings/users/roles/designer" },
   { label: "New Member", href: "/settings/users/roles/designer/new" },
   { label: "Profile", href: "/profile" },
-];
+]
 
 const meta: Meta<BreadcrumbsProps> = {
   title: "Nile Components/Breadcrumbs",
@@ -39,14 +39,14 @@ const meta: Meta<BreadcrumbsProps> = {
     maxItems: { control: "number" },
     items: { control: "object", table: { category: "Fn" } },
   },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Breadcrumbs>;
+type Story = StoryObj<typeof Breadcrumbs>
 
 export const DefaultPathWithElipsis: Story = {
   args: {
     showBackArrow: false,
   },
-};
+}

@@ -5,7 +5,7 @@ export type AccordionItemData = {
   title: string
   subtext?: string
   content: ReactNode
-};
+}
 
 export type OpenState = string | null | string[]
 

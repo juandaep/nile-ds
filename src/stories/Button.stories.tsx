@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import { fn } from "storybook/test";
-import Button from "../components/Button/Button";
+import type { Meta, StoryObj } from "@storybook/react-vite"
+import { fn } from "storybook/test"
+import Button from "../components/Button/Button"
 
 const meta: Meta<typeof Button> = {
   title: "Nile Components/Button",
@@ -76,21 +76,21 @@ const meta: Meta<typeof Button> = {
     trailIcon: false,
     disabled: false,
   },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: { text: "Primary", variant: "primary", size: "md" },
   name: "1. Primary Button",
-};
+}
 
 export const Secondary: Story = {
   args: { text: "Secondary", variant: "secondary", size: "md" },
   name: "2. Secondary Button",
-};
+}
 
 export const Sizes: Story = {
   render: () => (
@@ -101,7 +101,7 @@ export const Sizes: Story = {
     </div>
   ),
   name: "3. Size Variations",
-};
+}
 
 export const IconOnly: Story = {
   args: {
@@ -110,9 +110,9 @@ export const IconOnly: Story = {
     text: "",
   },
   name: "4. Icon Only Button",
-};
+}
 
 export const Loading: Story = {
   args: { option: "loading", text: "Loading" },
   name: "5. Loading State",
-};
+}

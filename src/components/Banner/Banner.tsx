@@ -1,15 +1,15 @@
-import React from "react";
+import React from "react"
 import {
   AlertCircleIcon,
   CancelCircleIcon,
   CheckmarkCircle02Icon,
   InformationCircleIcon,
   Cancel01Icon,
-} from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
-import type { BannerProps, BannerVariant } from "./Banner.types";
-import Button from "../Button/Button";
-import classes from "./banner.module.css";
+} from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import type { BannerProps, BannerVariant } from "./Banner.types"
+import Button from "../Button/Button"
+import classes from "./banner.module.css"
 
 function renderIcon(variant: BannerVariant, size = 20) {
   const iconData =
@@ -19,7 +19,7 @@ function renderIcon(variant: BannerVariant, size = 20) {
       warning: AlertCircleIcon,
       error: CancelCircleIcon,
       general: InformationCircleIcon,
-    }[variant] || InformationCircleIcon;
+    }[variant] || InformationCircleIcon
   return (
     <svg
       width={size}
@@ -35,7 +35,7 @@ function renderIcon(variant: BannerVariant, size = 20) {
           React.createElement(tag, { ...attrs, key: i })
         )}
     </svg>
-  );
+  )
 }
 
 export const Banner = ({
@@ -50,9 +50,9 @@ export const Banner = ({
   onTryAgain,
   onTrailButton,
 }: BannerProps) => {
-  const [visible, setVisible] = React.useState(true);
+  const [visible, setVisible] = React.useState(true)
 
-  const designTypeKey = designType.replace(/-./g, (m) => m[1].toUpperCase());
+  const designTypeKey = designType.replace(/-./g, (m) => m[1].toUpperCase())
 
   const bannerClasses = [
     classes.banner,
@@ -60,19 +60,19 @@ export const Banner = ({
     classes[designTypeKey as keyof typeof classes],
   ]
     .filter(Boolean)
-    .join(" ");
+    .join(" ")
 
   function handleDismiss() {
-    setVisible(false);
-    if (onCancel) onCancel();
+    setVisible(false)
+    if (onCancel) onCancel()
   }
 
   function handleRestore() {
-    setVisible(true);
+    setVisible(true)
   }
 
   if (!visible) {
-    if (!dismissible) return null;
+    if (!dismissible) return null
     return (
       <button
         type="button"
@@ -81,7 +81,7 @@ export const Banner = ({
       >
         Show Banner
       </button>
-    );
+    )
   }
 
   const titleClass = `${classes.title} ${
@@ -90,7 +90,7 @@ export const Banner = ({
         variant.charAt(0).toUpperCase() + variant.slice(1)
       }` as keyof typeof classes
     ]
-  }`;
+  }`
 
   return (
     <div role="alert" className={bannerClasses}>
@@ -123,8 +123,8 @@ export const Banner = ({
             onClick={handleDismiss}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleDismiss();
+                e.preventDefault()
+                handleDismiss()
               }
             }}
           >
@@ -150,7 +150,7 @@ export const Banner = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

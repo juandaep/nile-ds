@@ -1,5 +1,5 @@
-import type { BadgeProps, BadgeType, BadgeValue } from "./Badge.type";
-import classes from "./badge.module.css";
+import type { BadgeProps, BadgeType, BadgeValue } from "./Badge.type"
+import classes from "./badge.module.css"
 
 export const Badge = ({
   type = "Number",
@@ -12,36 +12,36 @@ export const Badge = ({
     Number: 2,
     Text: "New",
     Dot: "",
-  };
+  }
 
   const displayValue =
-    type !== "Dot" && value === undefined ? defaultValues[type] : value;
+    type !== "Dot" && value === undefined ? defaultValues[type] : value
 
-  const colorClass = classes[color.toLowerCase() as keyof typeof classes];
-  const typeKey = type.toLowerCase();
-  const typeClass = classes[typeKey as keyof typeof classes];
+  const colorClass = classes[color.toLowerCase() as keyof typeof classes]
+  const typeKey = type.toLowerCase()
+  const typeClass = classes[typeKey as keyof typeof classes]
 
-  const badgeClassName = `${classes.badge} ${colorClass} ${typeClass}`;
+  const badgeClassName = `${classes.badge} ${colorClass} ${typeClass}`
 
   const renderContent = () => {
     switch (type) {
       case "Dot":
-        return null;
+        return null
       case "Number":
       case "Text":
-        return <span>{String(displayValue)}</span>;
+        return <span>{String(displayValue)}</span>
       default:
-        return null;
+        return null
     }
-  };
+  }
 
   if (children) {
     const positionKey = position.replace(/-./g, (match) =>
       match[1].toUpperCase()
-    );
-    const positionClass = classes[positionKey as keyof typeof classes];
+    )
+    const positionClass = classes[positionKey as keyof typeof classes]
 
-    const wrapperClassName = `${classes.wrapper} ${positionClass}`;
+    const wrapperClassName = `${classes.wrapper} ${positionClass}`
 
     return (
       <div className={classes.containerWrapped}>
@@ -50,10 +50,10 @@ export const Badge = ({
           <div className={badgeClassName}>{renderContent()}</div>
         </div>
       </div>
-    );
+    )
   }
 
-  return <div className={badgeClassName}>{renderContent()}</div>;
-};
+  return <div className={badgeClassName}>{renderContent()}</div>
+}
 
-export default Badge;
+export default Badge

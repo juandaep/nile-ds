@@ -2,9 +2,9 @@ import {
   ArrowRightIcon,
   CheckmarkCircle02Icon,
   PrinterIcon,
-} from "@hugeicons/core-free-icons";
-import React from "react";
-import type { ButtonProps } from "./Button.types";
+} from "@hugeicons/core-free-icons"
+import React from "react"
+import type { ButtonProps } from "./Button.types"
 import classes from "./button.module.css"
 
 function renderIconDef(def: readonly any[], size = 16) {
@@ -22,11 +22,11 @@ function renderIconDef(def: readonly any[], size = 16) {
         React.createElement(tag, { ...attrs, key: i })
       )}
     </svg>
-  );
+  )
 }
 
-const ICON_FOR_LEAD = PrinterIcon;
-const ICON_FOR_TRAIL = ArrowRightIcon || CheckmarkCircle02Icon;
+const ICON_FOR_LEAD = PrinterIcon
+const ICON_FOR_TRAIL = ArrowRightIcon || CheckmarkCircle02Icon
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -43,7 +43,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const variantClass = classes[variant as keyof typeof classes]
-    const sizeClass = classes[`size${size.toUpperCase()}` as keyof typeof classes];
+    const sizeClass = classes[`size${size.toUpperCase()}` as keyof typeof classes]
     const optionClass = classes[`option${option.charAt(0).toUpperCase() + option.slice(1).replace(/-/g, '')}` as keyof typeof classes]
     const classNames = [
       classes.button,
@@ -53,24 +53,24 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled ? classes.isDisabled : "",
     ]
       .filter(Boolean)
-      .join(" ");
+      .join(" ")
 
-    const iconSize = size === "sm" ? 16 : size === "md" ? 20 : 24;
+    const iconSize = size === "sm" ? 16 : size === "md" ? 20 : 24
 
-    const isIconOnly = option === "icon-only";
+    const isIconOnly = option === "icon-only"
 
     // If icon-only, render a single centered icon. Do not render lead/trail around text.
     if (isIconOnly) {
       const centerIcon =
         (leadIcon ? renderIconDef(ICON_FOR_LEAD, iconSize) : null) ??
         (trailIcon ? renderIconDef(ICON_FOR_TRAIL, iconSize) : null) ??
-        renderIconDef(ICON_FOR_LEAD, iconSize);
+        renderIconDef(ICON_FOR_LEAD, iconSize)
 
       return (
         <button ref={ref} className={classNames} disabled={disabled} {...rest}>
           <span className={classes.icon}>{centerIcon}</span>
         </button>
-      );
+      )
     }
 
     return (
@@ -102,8 +102,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           </span>
         ) : null}
       </button>
-    );
+    )
   }
-);
+)
 
-export default Button;
+export default Button
