@@ -1,5 +1,5 @@
-.nile-avatar {
-  display: inline-flex;
+.avatar {
+  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: var(--rounded-full);
@@ -40,7 +40,7 @@
   letter-spacing: var(--typescale__18__tracking);
 }
 
-.typeProfile {
+.profile {
   background-color: #ccc;
 }
 .photo {
@@ -48,29 +48,29 @@
   height: 100%;
   object-fit: cover;
 }
-.typeText {
+.text {
   background-color: var(--colors__surface__info__bginfo);
   color: white;
   text-transform: uppercase;
 }
-.typeIcon-filled {
+.filled {
   background-color: var(--colors__surface__info__fginfolow);
   color: var(--colors__icon__iconinfo);
 }
-.typeIcon-outlined {
+.outlined {
   background-color: white;
   outline: 1px solid var(--colors__border__primary__borderprimaryhigh);
   color: var(--colors__icon__iconprominent);
 }
 
-.typeIcon-multiple-wrapper {
+.multipleWrapper {
   display: flex;
   align-items: center;
   position: relative;
   height: var(--avatar-multiple-height);
 }
 
-.typeIcon-multiple-wrapper .nile-avatar {
+.multipleWrapper .avatar {
   position: absolute;
   box-sizing: content-box;
   background-color: white;
@@ -82,50 +82,45 @@
   margin: auto;
 }
 
-.typeIcon-multiple-wrapper .nile-avatar-child-1 {
+.child1 {
   z-index: 10;
 }
-.typeIcon-multiple-wrapper .nile-avatar-child-2 {
+.child2 {
   z-index: 20;
 }
-.typeIcon-multiple-wrapper .nile-avatar-child-3 {
+.child3 {
   z-index: 30;
 }
 
 /* Size Small (32px) */
-.sizeSm.nile-avatar-child-1 {
+.sizeSm.child1 {
   right: 6px;
 }
-.sizeSm.nile-avatar-child-2 {
+.sizeSm.child2 {
   right: -1px;
 }
-.sizeSm.nile-avatar-child-3 {
+.sizeSm.child3 {
   left: 6px;
 }
 
 /* Size Medium (40px) */
-.sizeMd.nile-avatar-child-1 {
+.sizeMd.child1 {
   right: 8px;
 }
-.sizeMd.nile-avatar-child-2 {
+.sizeMd.child2 {
   right: -1px;
 }
-.sizeMd.nile-avatar-child-3 {
+.sizeMd.child3 {
   left: 8px;
 }
 
 /* Size Large (48px) */
-.sizeLg.nile-avatar-child-1 {
+.sizeLg.child1 {
   right: 10px;
 }
-.sizeLg.nile-avatar-child-2 {
+.sizeLg.child2 {
   right: -1px;
 }
-.sizeLg.nile-avatar-child-3 {
+.sizeLg.child3 {
   left: 10px;
-}
-
-/* Overide Stories CSS Section */
-div#story--nile-components-avatar--profile-with-photo--primary-inner {
-  display: flex;
 }

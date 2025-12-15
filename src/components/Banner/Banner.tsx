@@ -6,11 +6,10 @@ import {
   InformationCircleIcon,
   Cancel01Icon,
 } from "@hugeicons/core-free-icons";
-
 import { HugeiconsIcon } from "@hugeicons/react";
-import "./banner.css";
-import Button from "../Button/Button";
 import type { BannerProps, BannerVariant } from "./Banner.types";
+import Button from "../Button/Button";
+import classes from "./banner.module.css";
 
 function renderIcon(variant: BannerVariant, size = 20) {
   const iconData =
@@ -53,10 +52,12 @@ export const Banner = ({
 }: BannerProps) => {
   const [visible, setVisible] = React.useState(true);
 
-  const classes = [
-    "nile-banner",
-    `nile-banner--${variant}`,
-    `nile-banner--${designType || "outlined"}`,
+  const designTypeKey = designType.replace(/-./g, (m) => m[1].toUpperCase());
+
+  const bannerClasses = [
+    classes.banner,
+    classes[variant as keyof typeof classes],
+    classes[designTypeKey as keyof typeof classes],
   ]
     .filter(Boolean)
     .join(" ");
@@ -75,7 +76,7 @@ export const Banner = ({
     return (
       <button
         type="button"
-        className="nile-banner__show-button"
+        className={classes.showButton}
         onClick={handleRestore}
       >
         Show Banner
@@ -83,29 +84,33 @@ export const Banner = ({
     );
   }
 
+  const titleClass = `${classes.title} ${
+    classes[
+      `title${
+        variant.charAt(0).toUpperCase() + variant.slice(1)
+      }` as keyof typeof classes
+    ]
+  }`;
+
   return (
-    <div role="alert" className={classes}>
-      <div className="nile-banner__content">
+    <div role="alert" className={bannerClasses}>
+      <div className={classes.content}>
         {variant !== "general" && (
-          <span className="nile-banner__icon">{renderIcon(variant, 20)}</span>
+          <span className={classes.icon}>{renderIcon(variant, 20)}</span>
         )}
 
-        <div className="nile-banner__body">
-          {title && (
-            <h3 className={`nile-banner__title nile-banner__title--${variant}`}>
-              {title}
-            </h3>
-          )}
-          {children && <div className="nile-banner__subtitle">{children}</div>}
+        <div className={classes.body}>
+          {title && <h3 className={titleClass}>{title}</h3>}
+          {children && <div className={classes.subtitle}>{children}</div>}
         </div>
       </div>
 
-      <div className="nile-banner__trailing-actions">
+      <div className={classes.trailingActions}>
         {showTrailButton && (
           <Button
+            text="Upgrade"
             size="sm"
             variant="tertiary"
-            text="Upgrade"
             onClick={onTrailButton}
           />
         )}
@@ -113,7 +118,7 @@ export const Banner = ({
           <span
             role="button"
             tabIndex={0}
-            className="nile-banner__close"
+            className={classes.close}
             aria-label="Close banner"
             onClick={handleDismiss}
             onKeyDown={(e) => {
@@ -129,17 +134,17 @@ export const Banner = ({
       </div>
 
       {showFooterButtons && (
-        <div className="nile-banner__footer">
+        <div className={classes.footer}>
           <Button
+            text="Cancel"
             size="sm"
             variant="ghost"
-            text="Cancel"
             onClick={handleDismiss}
           />
           <Button
+            text="Try Again"
             size="sm"
             variant="primary"
-            text="Try Again"
             onClick={onTryAgain}
           />
         </div>

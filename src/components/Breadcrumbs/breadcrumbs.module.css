@@ -1,4 +1,4 @@
-.nile-breadcrumb__list {
+.list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -9,43 +9,43 @@
   letter-spacing: var(--typescale__12__tracking);
 }
 
-.nile-breadcrumb__item {
+.item {
   display: flex;
   align-items: center;
 }
 
-.nile-breadcrumb__link {
+.link {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: var(--colors__text__primary__textbody);
   white-space: nowrap;
 }
-.nile-breadcrumb__link:hover {
+.link:hover {
   color: var(--colors__text__primary__texttitle);
   transition: color 0.1s ease-in-out;
 }
 
-.nile-breadcrumb__last-link {
+.lastLink {
   text-decoration: none;
   color: inherit;
   font-weight: var(--typeface__weight__SemiBold);
 }
 
-.nile-breadcrumb__separator {
+.separator {
   margin: var(--size__0) var(--size__8);
   color: var(--colors__text__primary__textlabel);
   display: flex;
   align-items: center;
 }
 
-.nile-breadcrumb__arrow-back {
+.arrowBack {
   display: flex;
   align-items: center;
   margin-right: var(--size__8);
   color: inherit;
 }
 
-.nle-breadcrumb__elipsis {
+.elipsis {
   color: var(--colors__text__primary__textlabel);
 }

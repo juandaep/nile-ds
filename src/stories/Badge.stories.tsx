@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Notification01Icon } from "@hugeicons/core-free-icons";
-import type { BadgeColor, BadgeType } from "../components/Badge/Badge.type";
-import Badge from "../components/Badge/Badge";
+import type { Meta, StoryObj } from "@storybook/react-vite"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { Notification01Icon } from "@hugeicons/core-free-icons"
+import type { BadgeColor, BadgeType } from "../components/Badge/Badge.type"
+import Badge from "../components/Badge/Badge"
 
 const allColors: BadgeColor[] = [
   "Red",
@@ -11,8 +11,8 @@ const allColors: BadgeColor[] = [
   "Grey",
   "White",
   "Black",
-];
-const allTypes: BadgeType[] = ["Dot", "Number", "Text"];
+]
+const allTypes: BadgeType[] = ["Dot", "Number", "Text"]
 
 const meta = {
   title: "Nile Components/Badge",
@@ -56,7 +56,6 @@ const meta = {
     position: {
       control: "select",
       options: ["top-right", "top-left", "bottom-right", "bottom-left"],
-      if: { arg: "children" },
       description: "Position of the badge relative to the wrapped element.",
     },
   },
@@ -64,32 +63,33 @@ const meta = {
     type: "Number",
     color: "Red",
   },
-} satisfies Meta<typeof Badge>;
+} satisfies Meta<typeof Badge>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-const BellIcon = <HugeiconsIcon icon={Notification01Icon} />;
+// Mendefinisikan ukuran ikon secara eksplisit
+const BellIcon = <HugeiconsIcon icon={Notification01Icon} size={24} />
 
 export const NumberDefault: Story = {
   args: { color: "Red" },
   name: "1. Number Default Value",
-};
+}
 
 export const NumberCustom: Story = {
   args: { color: "Black", value: "99+" },
   name: "2. Number Max Value",
-};
+}
 
 export const Dot: Story = {
   args: { type: "Dot", color: "Blue" },
   name: "3. Dot Indicator",
-};
+}
 
 export const TextDefault: Story = {
   args: { type: "Text", color: "Green" },
   name: "4. Text Badge",
-};
+}
 
 export const IconNotification: Story = {
   args: {
@@ -99,4 +99,4 @@ export const IconNotification: Story = {
     position: "top-right",
   },
   name: "5. Notification Badge on Icon",
-};
+}

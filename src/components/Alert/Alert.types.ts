@@ -1,10 +1,10 @@
-import type { AlertVariant } from "./Alert";
+import type { ReactNode } from "react"
+
+export type AlertVariant = "info" | "success" | "warning" | "danger"
 
 export interface AlertProps {
-  variant?: AlertVariant;
-  /** Content of the alert */
-  children?: React.ReactNode;
-  dismissible?: boolean;
-  /** Called when the close button is clicked */
-  onClose?: () => void;
+  variant?: AlertVariant
+  children?: ReactNode
+  dismissible?: boolean
+  onClose?: () => void
 }

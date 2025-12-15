@@ -1,9 +1,9 @@
-import "./badge.css";
 import type { BadgeProps, BadgeType, BadgeValue } from "./Badge.type";
+import classes from "./badge.module.css";
 
 export const Badge = ({
-  type,
-  color,
+  type = "Number",
+  color = "Red",
   value,
   children,
   position = "top-right",
@@ -17,9 +17,11 @@ export const Badge = ({
   const displayValue =
     type !== "Dot" && value === undefined ? defaultValues[type] : value;
 
-  const badgeClassName = `nile-badge nile-badge--${color.toLowerCase()} nile-badge--${type
-    .replace(/\s+/g, "-")
-    .toLowerCase()}`;
+  const colorClass = classes[color.toLowerCase() as keyof typeof classes];
+  const typeKey = type.toLowerCase();
+  const typeClass = classes[typeKey as keyof typeof classes];
+
+  const badgeClassName = `${classes.badge} ${colorClass} ${typeClass}`;
 
   const renderContent = () => {
     switch (type) {
@@ -27,17 +29,22 @@ export const Badge = ({
         return null;
       case "Number":
       case "Text":
-        return <span>{displayValue}</span>;
+        return <span>{String(displayValue)}</span>;
       default:
         return null;
     }
   };
 
   if (children) {
-    const wrapperClassName = `nile-badge__wrapper nile-badge__wrapper--${position}`;
+    const positionKey = position.replace(/-./g, (match) =>
+      match[1].toUpperCase()
+    );
+    const positionClass = classes[positionKey as keyof typeof classes];
+
+    const wrapperClassName = `${classes.wrapper} ${positionClass}`;
 
     return (
-      <div className="nile-badge__container-wrapped">
+      <div className={classes.containerWrapped}>
         {children}
         <div className={wrapperClassName}>
           <div className={badgeClassName}>{renderContent()}</div>

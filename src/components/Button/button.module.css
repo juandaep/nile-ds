@@ -1,4 +1,4 @@
-.nile-btn {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -12,12 +12,12 @@
   transition: background-color 120ms ease, border-color 120ms ease,
     color 120ms ease, transform 120ms ease;
 }
-.nile-btn:active {
+.button:active {
   transform: scale(0.96);
 }
 
 /* Sizes */
-.nile-btn--size-sm {
+.sizeSM {
   padding: var(--size__8) var(--size__6);
   font-size: var(--typescale__12__size);
   line-height: var(--typescale__12__lineheight);
@@ -25,11 +25,11 @@
   border-radius: var(--rounded-md);
   --nile-btn-icon-size: 16px;
 }
-.nile-btn--size-sm .nile-btn__text {
+.sizeSM .text {
   margin-inline: var(--size__6);
 }
 
-.nile-btn--size-md {
+.sizeMD {
   padding: var(--size__10) var(--size__8);
   font-size: var(--typescale__14__size);
   line-height: var(--typescale__14__lineheight);
@@ -37,11 +37,11 @@
   border-radius: var(--rounded-lg);
   --nile-btn-icon-size: 20px;
 }
-.nile-btn--size-md .nile-btn__text {
+.sizeMD .text {
   margin-inline: var(--size__8);
 }
 
-.nile-btn--size-lg {
+.sizeLG {
   padding: var(--size__12) var(--size__10);
   font-size: var(--typescale__16__size);
   line-height: var(--typescale__16__lineheight);
@@ -49,188 +49,187 @@
   border-radius: var(--rounded-lg);
   --nile-btn-icon-size: 24px;
 }
-.nile-btn--size-lg .nile-btn__text {
+.sizeLG .text {
   margin-inline: var(--size__10);
 }
 
 /* Variants (simple defaults, can be swapped for tokens) */
-.nile-btn--primary {
+.primary {
   background: var(--button__primary__background__btnbgdefault);
   color: white;
 }
-.nile-btn--primary:hover {
+.primary:hover {
   background: var(--button__primary__background__btnbghover);
 }
 
-.nile-btn--secondary {
+.secondary {
   background: var(--button__secondary__background__btnbgdefault);
   color: var(--button__secondary__text__btntextdefault);
 }
-.nile-btn--secondary:hover {
+.secondary:hover {
   background: var(--button__secondary__background__btnbghover);
 }
 
-.nile-btn--tertiary {
+.tertiary {
   background: var(--button__tertiary__background__btnbgdefault);
   color: var(--button__tertiary__text__btntextdefault);
   outline: 1px solid var(--button__tertiary__border__btnborderdefault);
   outline-offset: -1px;
 }
-.nile-btn--tertiary:hover {
+.tertiary:hover {
   background: var(--button__tertiary__background__btnbghover);
 }
 
-.nile-btn--ghost {
+.ghost {
   background: transparent;
   color: var(--button__ghost__text__btntextdefault);
 }
-.nile-btn--ghost:hover {
+.ghost:hover {
   background: var(--button__ghost__background__btnbghover);
   color: var(--button__ghost__text__btntextdefault);
 }
 
-.nile-btn--danger {
+.danger {
   background: var(--button__danger__background__btnbgdefault);
   color: var(--button__danger__text__btntextdefault);
 }
-.nile-btn--danger:hover {
+.danger:hover {
   background: var(--button__danger__background__btnbghover);
   color: var(--button__danger__text__btntexthover);
 }
 
-.nile-btn--primary.is-disabled,
-.nile-btn--secondary.is-disabled,
-.nile-btn--danger.is-disabled {
+.primary.isDisabled,
+.secondary.isDisabled,
+.danger.isDisabled {
   background: var(--button__primary__background__btnbgdisable);
   color: var(--button__primary__text__btntextdisable);
   cursor: not-allowed;
   pointer-events: none;
 }
-.nile-btn--tertiary.is-disabled {
+.tertiary.isDisabled {
   color: var(--button__primary__text__btntextdisable);
   outline: 1px solid var(--button__tertiary__border__btnborderdisable);
   outline-offset: -1px;
   cursor: not-allowed;
   pointer-events: none;
 }
-.nile-btn--ghost.is-disabled {
+.ghost.isDisabled {
   color: var(--button__primary__text__btntextdisable);
   cursor: not-allowed;
   pointer-events: none;
 }
 
-
 /* Icon / text layout */
-.nile-btn__lead,
-.nile-btn__trail {
+.lead,
+.trail {
   display: inline-flex;
   align-items: center;
 }
-.nile-btn__lead svg,
-.nile-btn__trail svg {
+.lead svg,
+.trail svg {
   width: var(--nile-btn-icon-size);
   height: var(--nile-btn-icon-size);
   color: currentColor;
 }
 
-.nile-btn__text {
+.text {
   display: inline-block;
   white-space: nowrap;
 }
 
-[class*="nile-btn--size-"] .nile-btn__lead {
+.sizeSM .lead, .sizeMD .lead, .sizeLG .lead {
   margin-left: 4px;
 }
 
-[class*="nile-btn--size-"] .nile-btn__trail {
+.sizeSM .trail, .sizeMD .trail, .sizeLG .trail {
   margin-right: 4px;
 }
 
 /* Icon-only */
-.nile-btn--option-icon-only {
+.optionIconOnly {
   justify-content: center;
 }
-.nile-btn--size-sm.nile-btn--option-icon-only {
+.sizeSM.optionIconOnly {
   width: 32px;
   height: 32px;
 }
-.nile-btn--size-md.nile-btn--option-icon-only {
+.sizeMD.optionIconOnly {
   width: 40px;
   height: 40px;
 }
-.nile-btn--size-lg.nile-btn--option-icon-only {
+.sizeLG.optionIconOnly {
   width: 48px;
   height: 48px;
 }
 
-.nile-btn__icon-only {
+.icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.nile-btn__icon-only svg {
+.icon svg {
   width: var(--nile-btn-icon-size);
   height: var(--nile-btn-icon-size);
 }
 
 /* Spinner placeholder */
-.nile-btn--option-loading {
+.optionLoading {
   justify-content: center;
 }
-.nile-btn--size-sm.nile-btn--option-loading {
+.sizeSM.optionLoading {
   width: 32px;
   height: 32px;
 }
-.nile-btn--size-md.nile-btn--option-loading {
+.sizeMD.optionLoading {
   width: 40px;
   height: 40px;
 }
-.nile-btn--size-lg.nile-btn--option-loading {
+.sizeLG.optionLoading {
   width: 48px;
   height: 48px;
 }
 
-.nile-btn__spinner {
+.spinner {
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: rgba(255, 255, 255, 0.9);
-  animation: nile-spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
 }
 
 /* Secondary, tertiary, and ghost sit on white backgrounds: use dark spinner */
-.nile-btn--secondary .nile-btn__spinner,
-.nile-btn--tertiary .nile-btn__spinner,
-.nile-btn--ghost .nile-btn__spinner {
+.secondary .spinner,
+.tertiary .spinner,
+.ghost .spinner {
   border: 2px solid rgba(0, 0, 0, 0.15);
   border-top-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Danger uses a red spinner */
-.nile-btn--danger .nile-btn__spinner {
+.danger .spinner {
   border: 2px solid rgba(220, 38, 38, 0.25);
   border-top-color: rgba(220, 38, 38, 0.9);
 }
-.nile-btn--danger:hover .nile-btn__spinner {
+.danger:hover .spinner {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: rgba(255, 255, 255, 0.9);
 }
 
-.nile-btn--size-sm .nile-btn__spinner {
+.sizeSM .spinner {
   width: 16px;
   height: 16px;
 }
 
-.nile-btn--size-md .nile-btn__spinner {
+.sizeMD .spinner {
   width: 20px;
   height: 20px;
 }
 
-.nile-btn--size-lg .nile-btn__spinner {
+.sizeLG .spinner {
   width: 24px;
   height: 24px;
 }
 
-@keyframes nile-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }

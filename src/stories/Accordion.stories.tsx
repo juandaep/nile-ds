@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Accordion } from "../components/Accordion/Accordion";
-import type { AccordionItemData, AccordionProps } from "../components/Accordion/Accordion.types";
-import { AccordionContent } from "../components/Accordion/AccordionContent";
+import type { Meta, StoryObj } from "@storybook/react"
+import { Accordion } from "../components/Accordion/Accordion"
+import type { AccordionItemData, AccordionProps } from "../components/Accordion/Accordion.types"
+import { AccordionContent } from "../components/Accordion/AccordionContent"
 
 interface AccordionStoryArgs extends AccordionProps {
-    titleContent: string;
-    subtextContent: string;
+    titleContent: string
+    subtextContent: string
 }
 
 const generateItems = (title: string, subtext: string): AccordionItemData[] => [
@@ -26,7 +26,7 @@ const generateItems = (title: string, subtext: string): AccordionItemData[] => [
     title: `${title} - Item 3`,
     content: <AccordionContent key="content-3" />,
   },
-];
+]
 
 const meta: Meta<AccordionStoryArgs> = {
   component: Accordion, 
@@ -71,19 +71,19 @@ const meta: Meta<AccordionStoryArgs> = {
     allowMultipleOpen: false,
     className: '',
   }
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<AccordionStoryArgs>; 
+type Story = StoryObj<AccordionStoryArgs>
 
 export const SingleOpen: Story = {
     args: {
         allowMultipleOpen: false,
     },
     render: (args) => {
-        const { titleContent, subtextContent, allowMultipleOpen, className } = args;
-        const items = generateItems(titleContent, subtextContent);
+        const { titleContent, subtextContent, allowMultipleOpen, className } = args
+        const items = generateItems(titleContent, subtextContent)
 
         return (
             <Accordion 
@@ -92,10 +92,10 @@ export const SingleOpen: Story = {
                 className={className}
                 key={allowMultipleOpen ? "multiple" : "single"} 
             />
-        );
+        )
     },
     name: "1. Single Open Mode",
-};
+}
 
 export const MultipleOpen: Story = {
     args: {
@@ -103,4 +103,4 @@ export const MultipleOpen: Story = {
     },
     render: SingleOpen.render,
     name: "2. Multiple Open Mode",
-};
+}

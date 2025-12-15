@@ -18,7 +18,7 @@ const meta: Meta<typeof Button> = {
 
   argTypes: {
     size: {
-      control: { type: "select" },
+      control: { type: "radio" },
       options: ["sm", "md", "lg"],
       description: "Defines the size of the button: small, medium, or large.",
     },
@@ -29,7 +29,7 @@ const meta: Meta<typeof Button> = {
         "Defines the visual style and hierarchy of the button (e.g., primary for main action, ghost for low-priority).",
     },
     option: {
-      control: { type: "select" },
+      control: { type: "radio" },
       options: ["default", "loading", "icon-only"],
       description:
         "Defines special states of the button, such as displaying a loading spinner or showing only an icon.",
@@ -37,10 +37,19 @@ const meta: Meta<typeof Button> = {
     leadIcon: {
       control: "boolean",
       description: "If TRUE, displays a default icon before the text.",
+      if: { 
+          arg: 'option', 
+          eq: 'default'
+        }
+      
     },
     trailIcon: {
       control: "boolean",
       description: "If TRUE, displays a default icon after the text.",
+      if: { 
+          arg: 'option', 
+          eq: 'default'
+        }
     },
     disabled: {
       control: "boolean",

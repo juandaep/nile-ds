@@ -37,12 +37,18 @@ const meta: Meta<typeof Avatar> = {
     text: {
       control: "text",
       description: 'Initials or displayed text (only valid when type="text").',
-      if: { arg: "type", neq: "profile" },
+      if: { 
+          arg: 'type', 
+          eq: 'text'
+        }
     },
     photoUrl: {
       control: "text",
       description: 'Profile photo URL (only valid when type="profile").',
-      if: { arg: "type", neq: "text" },
+      if: { 
+          arg: 'type', 
+          eq: 'profile'
+        },
     },
     icon: {
       control: false,
@@ -53,7 +59,7 @@ const meta: Meta<typeof Avatar> = {
   },
 
   args: {
-    type: "text",
+    type: "initial",
     size: "md",
     text: "kp",
   }
@@ -83,7 +89,7 @@ export const ProfileFallback: Story = {
 
 export const TextInitials: Story = {
   args: {
-    type: "text",
+    type: "initial",
     size: "md",
     text: "JD",
   },

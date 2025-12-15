@@ -1,12 +1,26 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
-export type AvatarType = 'profile' | 'text' | 'icon-filled' | 'icon-outlined' | 'icon-multiple';
-export type AvatarSize = 'sm' | 'md' | 'lg';
+export type AvatarType = 'profile' | 'initial' | 'icon-filled' | 'icon-outlined' | 'icon-multiple'
+export type AvatarSize = 'sm' | 'md' | 'lg'
 
 export interface AvatarProps {
-  type: AvatarType;
+  type: AvatarType
+  size: AvatarSize
+  text?: string
+  photoUrl?: string
+  icon?: ReactNode
+}
+
+export interface IconPlaceholderProps extends Pick<AvatarProps, "type" | "size"> {
+  iconElement: ReactNode;
+}
+
+export interface AvatarChildProps {
   size: AvatarSize;
-  text?: string;
-  photoUrl?: string;
-  icon?: ReactNode; 
+  iconElement: ReactNode;
+  childIndex: number;
+}
+
+export interface AvatarMultipleProps extends Pick<AvatarProps, "size"> {
+  iconElement: ReactNode;
 }
