@@ -1,4 +1,4 @@
-.nile-alert {
+.alert {
   display: flex;
   align-items: center;
   min-width: 296px;
@@ -9,65 +9,65 @@
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   border: 1px solid transparent;
 }
-.nile-alert__content {
+.content {
   display: flex;
   flex: 1 0 0;
 }
 
-.nile-alert__icon {
+.icon {
   display: flex;
   align-items: center;
   margin-right: var(--spacing-size-12, 12px);
   flex-shrink: 0;
 }
 
-.nile-alert__body {
+.body {
   font-size: var(--typescale__14__size);
   font-weight: var(--typeface__weight__Medium);
   line-height: var(--typescale__14__lineheight);
   letter-spacing: var(--typescale__14__tracking);
 }
 
-.nile-alert__dismiss {
+.dismiss {
   color: var(--alert__alerticondismissable);
   align-items: center;
   display: flex;
   cursor: pointer;
 }
 
-.nile-alert__show {
+.show {
   display: inline-flex;
   align-items: center;
 }
 
-.nile-alert__close {
+.close {
   display: flex;
   color: var(--alert__alerticondismissable);
   cursor: pointer;
 }
 
-.nile-alert--info {
+.info {
   background-color: var(--alert__info__alertbginfo);
   border-color: var(--alert__info__alertborderinfo);
   color: var(--alert__info__alerttextinfo);
 }
-.nile-alert--success {
+.success {
   background-color: var(--alert__success__alertbgsuccess);
   border-color: var(--alert__success__alertbordersuccess);
   color: var(--alert__success__alerttextsuccess);
 }
-.nile-alert--warning {
+.warning {
   background-color: var(--alert__warning__alertbgwarning);
   border-color: var(--alert__warning__alertborderwarning);
   color: var(--alert__warning__alerttextwarning);
 }
-.nile-alert--danger {
+.danger {
   background-color: var(--alert__error__alertbgerror);
   border-color: var(--alert__error__alertbordererror);
   color: var(--alert__error__alerttexterror);
 }
 
-.nile-alert__show-button {
+.showButton {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 6px 10px;

@@ -1,16 +1,15 @@
-import React from "react";
+import React from "react"
 import {
   AlertCircleIcon,
   CancelCircleIcon,
   CheckmarkCircle02Icon,
   InformationCircleIcon,
   Cancel01Icon,
-} from "@hugeicons/core-free-icons";
-
-import { HugeiconsIcon } from "@hugeicons/react";
-import "./banner.css";
-import Button from "../Button/Button";
-import type { BannerProps, BannerVariant } from "./Banner.types";
+} from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import type { BannerProps, BannerVariant } from "./Banner.types"
+import Button from "../Button/Button"
+import classes from "./banner.module.css"
 
 function renderIcon(variant: BannerVariant, size = 20) {
   const iconData =
@@ -20,7 +19,7 @@ function renderIcon(variant: BannerVariant, size = 20) {
       warning: AlertCircleIcon,
       error: CancelCircleIcon,
       general: InformationCircleIcon,
-    }[variant] || InformationCircleIcon;
+    }[variant] || InformationCircleIcon
   return (
     <svg
       width={size}
@@ -36,7 +35,7 @@ function renderIcon(variant: BannerVariant, size = 20) {
           React.createElement(tag, { ...attrs, key: i })
         )}
     </svg>
-  );
+  )
 }
 
 export const Banner = ({
@@ -51,72 +50,81 @@ export const Banner = ({
   onTryAgain,
   onTrailButton,
 }: BannerProps) => {
-  const [visible, setVisible] = React.useState(true);
+  const [visible, setVisible] = React.useState(true)
 
-  const classes = [
-    "nile-banner",
-    `nile-banner--${variant}`,
-    `nile-banner--${designType || "outlined"}`,
+  const designTypeKey = designType.replace(/-./g, (m) => m[1].toUpperCase())
+
+  const bannerClasses = [
+    classes.banner,
+    classes[variant as keyof typeof classes],
+    classes[designTypeKey as keyof typeof classes],
   ]
     .filter(Boolean)
-    .join(" ");
+    .join(" ")
 
   function handleDismiss() {
-    setVisible(false);
-    if (onCancel) onCancel();
+    setVisible(false)
+    if (onCancel) onCancel()
   }
 
   function handleRestore() {
-    setVisible(true);
+    setVisible(true)
   }
 
   if (!visible) {
-    if (!dismissible) return null;
+    if (!dismissible) return null
     return (
       <button
         type="button"
-        className="nile-banner__show-button"
+        className={classes.showButton}
         onClick={handleRestore}
       >
         Show Banner
       </button>
-    );
+    )
   }
 
+  const titleClass = `${classes.title} ${
+    classes[
+      `title${
+        variant.charAt(0).toUpperCase() + variant.slice(1)
+      }` as keyof typeof classes
+    ]
+  }`
+
   return (
-    <div role="alert" className={classes}>
-      <div className="nile-banner__content">
+    <div role="alert" className={bannerClasses}>
+      <div className={classes.content}>
         {variant !== "general" && (
-          <span className="nile-banner__icon">{renderIcon(variant, 20)}</span>
+          <span className={classes.icon}>{renderIcon(variant, 20)}</span>
         )}
 
-        <div className="nile-banner__body">
-          {title && (
-            <h3 className={`nile-banner__title nile-banner__title--${variant}`}>
-              {title}
-            </h3>
-          )}
-          {children && <div className="nile-banner__subtitle">{children}</div>}
+        <div className={classes.body}>
+          {title && <h3 className={titleClass}>{title}</h3>}
+          {children && <div className={classes.subtitle}>{children}</div>}
         </div>
       </div>
 
-      <div className="nile-banner__trailing-actions">
+      <div className={classes.trailingActions}>
         {showTrailButton && (
-          <Button size="sm" variant="tertiary" onClick={onTrailButton}>
-            Upgrade
-          </Button>
+          <Button
+            text="Upgrade"
+            size="sm"
+            variant="tertiary"
+            onClick={onTrailButton}
+          />
         )}
         {dismissible ? (
           <span
             role="button"
             tabIndex={0}
-            className="nile-banner__close"
+            className={classes.close}
             aria-label="Close banner"
             onClick={handleDismiss}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleDismiss();
+                e.preventDefault()
+                handleDismiss()
               }
             }}
           >
@@ -126,17 +134,23 @@ export const Banner = ({
       </div>
 
       {showFooterButtons && (
-        <div className="nile-banner__footer">
-          <Button size="sm" variant="ghost" onClick={handleDismiss}>
-            Cancel
-          </Button>
-          <Button size="sm" variant="primary" onClick={onTryAgain}>
-            Try Again
-          </Button>
+        <div className={classes.footer}>
+          <Button
+            text="Cancel"
+            size="sm"
+            variant="ghost"
+            onClick={handleDismiss}
+          />
+          <Button
+            text="Try Again"
+            size="sm"
+            variant="primary"
+            onClick={onTryAgain}
+          />
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

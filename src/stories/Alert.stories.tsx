@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import { fn } from "storybook/test";
-import Alert from "../components/Alert/Alert";
+import type { Meta, StoryObj } from "@storybook/react-vite"
+import { fn } from "storybook/test"
+import Alert from "../components/Alert/Alert"
 
 const meta = {
   title: "Nile Components/Alert",
@@ -34,11 +34,11 @@ const meta = {
     },
   },
   args: { onClose: fn() },
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<typeof Alert>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const Info: Story = {
   args: {
@@ -47,7 +47,7 @@ export const Info: Story = {
     dismissible: false,
   },
   name: "1. Info Alert (Non-Dismissible)",
-};
+}
 
 export const Success: Story = {
   args: {
@@ -56,7 +56,7 @@ export const Success: Story = {
     dismissible: true,
   },
   name: "2. Success Alert",
-};
+}
 
 export const Warning: Story = {
   args: {
@@ -65,7 +65,7 @@ export const Warning: Story = {
     dismissible: true,
   },
   name: "3. Warning Alert",
-};
+}
 
 export const Danger: Story = {
   args: {
@@ -74,7 +74,7 @@ export const Danger: Story = {
     dismissible: true,
   },
   name: "4. Danger Alert",
-};
+}
 
 export const Dismissible: Story = {
   args: {
@@ -84,4 +84,4 @@ export const Dismissible: Story = {
     dismissible: true,
   },
   name: "5. Dismissible Alert Example",
-};
+}

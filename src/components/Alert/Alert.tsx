@@ -1,15 +1,14 @@
-import React from "react";
-
+import React, { useState } from "react"
 import {
   AlertCircleIcon,
   CancelCircleIcon,
   CheckmarkCircle02Icon,
   InformationCircleIcon,
   Cancel01Icon,
-} from "@hugeicons/core-free-icons";
-import "./alert.css";
-import { HugeiconsIcon } from "@hugeicons/react";
-import type { AlertProps } from "./Alert.types";
+} from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import type { AlertProps, AlertVariant } from "./Alert.types"
+import classes from "./alert.module.css"
 
 function renderIcon(variant: AlertVariant, size = 20) {
   const iconData =
@@ -18,7 +17,7 @@ function renderIcon(variant: AlertVariant, size = 20) {
       success: CheckmarkCircle02Icon,
       warning: AlertCircleIcon,
       danger: CancelCircleIcon,
-    }[variant] || InformationCircleIcon;
+    }[variant] || InformationCircleIcon
   return (
     <svg
       width={size}
@@ -33,10 +32,8 @@ function renderIcon(variant: AlertVariant, size = 20) {
         React.createElement(tag, { ...attrs, key: i })
       )}
     </svg>
-  );
+  )
 }
-
-export type AlertVariant = "info" | "success" | "warning" | "danger";
 
 export const Alert = ({
   variant = "info",
@@ -44,48 +41,45 @@ export const Alert = ({
   dismissible = false,
   onClose,
 }: AlertProps) => {
-  const [visible, setVisible] = React.useState(true);
-  const classes = ["nile-alert", `nile-alert--${variant}`]
-    .filter(Boolean)
-    .join(" ");
+  const [visible, setVisible] = useState(true)
 
   function handleClose() {
-    setVisible(false);
-    if (onClose) onClose();
+    setVisible(false)
+    if (onClose) onClose()
   }
 
   if (!visible) {
-    if (!dismissible) return null;
+    if (!dismissible) return null
     return (
-      <div className="nile-alert__show">
+      <div className={classes.show}>
         <button
           type="button"
-          className="nile-alert__show-button"
+          className={classes.showButton}
           onClick={() => setVisible(true)}
         >
           Show alert
         </button>
       </div>
-    );
+    )
   }
 
   return (
-    <div role="alert" className={classes}>
-      <div className="nile-alert__content">
-        <span className="nile-alert__icon">{renderIcon(variant, 20)}</span>
-        {children ? <div className="nile-alert__body">{children}</div> : null}
+    <div role="alert" className={`${classes.alert} ${classes[variant]}`}>
+      <div className={classes.content}>
+        <span className={classes.icon}>{renderIcon(variant, 20)}</span>
+        {children ? <div className={classes.body}>{children}</div> : null}
       </div>
       {dismissible ? (
         <span
           role="button"
           tabIndex={0}
-          className="nile-alert__close"
+          className={classes.close}
           aria-label="Close alert"
           onClick={handleClose}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              handleClose();
+              e.preventDefault()
+              handleClose()
             }
           }}
         >
@@ -93,7 +87,7 @@ export const Alert = ({
         </span>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default Alert;
+export default Alert

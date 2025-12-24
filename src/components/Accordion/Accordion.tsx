@@ -1,8 +1,8 @@
-import { ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { useState } from "react";
-import "./accordion.css";
-import type { AccordionItemProps, AccordionProps, OpenState } from "./Accordion.types";
+import { ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useState } from "react"
+import type { AccordionItemProps, AccordionProps, OpenState } from "./Accordion.types"
+import classes from "./accordion.module.css"
 
 const AccordionItem = ({
   id,
@@ -12,20 +12,22 @@ const AccordionItem = ({
   onClick,
   children,
 }: AccordionItemProps) => {
-  const toggleOpen = () => onClick(id);
+  const toggleOpen = () => onClick(id)
+
+  const accordiontItem = `${classes.item} ${isOpen ? classes.open : ""}`
 
   return (
-    <div className={`nile-accordion__item ${isOpen ? "open" : ""}`}>
+    <div className={accordiontItem}>
       <div
-        className="nile-accordion__header"
+        className={classes.header}
         onClick={toggleOpen}
         aria-expanded={isOpen}
       >
-        <div className="nile-accordion-header__text-wrapper">
-          <div className="nile-accordion__title">{title}</div>
-          {subtext && <div className="nile-accordion__subtext">{subtext}</div>}
+        <div className={classes.headerTextWrapper}>
+          <div className={classes.title}>{title}</div>
+          {subtext && <div className={classes.subtext}>{subtext}</div>}
         </div>
-        <span className="nile-accordion__icon">
+        <span className={classes.icon}>
           {isOpen ? (
             <HugeiconsIcon icon={ArrowUp01Icon} size={24} />
           ) : (
@@ -34,53 +36,55 @@ const AccordionItem = ({
         </span>
       </div>
 
-      <div className="nile-accordion__content-wrapper">
-        <div className="nile-accordion__content">{children}</div>
+      <div className={classes.contentWrapper}>
+        <div className={classes.content}>{children}</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const Accordion = ({
   items,
   className = "",
   allowMultipleOpen = false,
-}: AccordionProps) => { 
+}: AccordionProps) => {
   const [openState, setOpenState] = useState<OpenState>(
     allowMultipleOpen ? [] : null
-  );
+  )
 
   const handleItemClick = (id: string) => {
     if (allowMultipleOpen) {
       setOpenState((prevOpenState) => {
         const currentOpenIds = Array.isArray(prevOpenState)
           ? prevOpenState
-          : [];
+          : []
 
         if (currentOpenIds.includes(id)) {
-          return currentOpenIds.filter((itemId) => itemId !== id);
+          return currentOpenIds.filter((itemId) => itemId !== id)
         } else {
-          return [...currentOpenIds, id];
+          return [...currentOpenIds, id]
         }
-      });
+      })
     } else {
       setOpenState((prevOpenState) => {
-        const currentOpenId = prevOpenState as string | null;
-        return currentOpenId === id ? null : id;
-      });
+        const currentOpenId = prevOpenState as string | null
+        return currentOpenId === id ? null : id
+      })
     }
-  };
+  }
+
+  const accordionContainer = `${classes.container} ${className}`
 
   return (
-    <div className={`nile-accordion__container ${className}`}>
+    <div className={accordionContainer}>
       {items.map((item) => {
-        let isOpen = false;
+        let isOpen = false
 
         if (allowMultipleOpen) {
-          const currentOpenIds = Array.isArray(openState) ? openState : [];
-          isOpen = currentOpenIds.includes(item.id);
+          const currentOpenIds = Array.isArray(openState) ? openState : []
+          isOpen = currentOpenIds.includes(item.id)
         } else {
-          isOpen = openState === item.id;
+          isOpen = openState === item.id
         }
 
         return (
@@ -94,8 +98,8 @@ export const Accordion = ({
           >
             {item.content}
           </AccordionItem>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}

@@ -1,4 +1,4 @@
-.nile-banner {
+.banner {
   min-width: 456px;
   max-width: 100%;
   padding: var(--size__12);
@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-.nile-banner__footer {
+.footer {
   grid-column: 1 / -1;
   padding-top: var(--size__8);
   display: flex;
@@ -17,37 +17,13 @@
   gap: var(--size__12);
 }
 
-.nile-banner--outlined {
+.outlined {
   border: 1px solid;
 }
-
-/* --- Theme Colors for Outlined --- */
-.nile-banner--info.nile-banner--outlined {
-  background: var(--banner__info__background__bannerbg);
-  border-color: var(--banner__info__border__bannerborderlow);
-}
-.nile-banner--success.nile-banner--outlined {
-  background: var(--banner__success__background__bannerbg);
-  border: 1px solid var(--banner__success__border__bannerborderlow);
-}
-.nile-banner--warning.nile-banner--outlined {
-  background: var(--banner__warning__background__bannerbg);
-  border: 1px solid var(--banner__warning__border__bannerborderlow);
-}
-.nile-banner--error.nile-banner--outlined {
-  background: var(--banner__error__background__bannerbg);
-  border: 1px solid var(--banner__error__border__bannerborderlow);
-}
-.nile-banner--general.nile-banner--outlined {
-  background: var(--banner__general__background__bannerbg);
-  border: 1px solid var(--banner__general__border__bannerborderlow);
-}
-
-/* --- Theme Colors for Side Border --- */
-.nile-banner--side-border {
+.sideBorder {
   position: relative;
 }
-.nile-banner--side-border::before {
+.sideBorder::before {
   content: "";
   position: absolute;
   top: 0;
@@ -57,103 +33,124 @@
   border-radius: 8px 0 0 8px;
 }
 
-.nile-banner--info.nile-banner--side-border {
+.info.outlined {
+  background: var(--banner__info__background__bannerbg);
+  border-color: var(--banner__info__border__bannerborderlow);
+}
+.success.outlined {
+  background: var(--banner__success__background__bannerbg);
+  border: 1px solid var(--banner__success__border__bannerborderlow);
+}
+.warning.outlined {
+  background: var(--banner__warning__background__bannerbg);
+  border: 1px solid var(--banner__warning__border__bannerborderlow);
+}
+.error.outlined {
+  background: var(--banner__error__background__bannerbg);
+  border: 1px solid var(--banner__error__border__bannerborderlow);
+}
+.general.outlined {
+  background: var(--banner__general__background__bannerbg);
+  border: 1px solid var(--banner__general__border__bannerborderlow);
+}
+
+.info.sideBorder {
   background: var(--banner__info__background__bannerbg);
 }
-.nile-banner--info.nile-banner--side-border::before {
+.info.sideBorder::before {
   background: var(--banner__info__border__bannerborder);
 }
-.nile-banner--success.nile-banner--side-border {
+.success.sideBorder {
   background: var(--banner__success__background__bannerbg);
 }
-.nile-banner--success.nile-banner--side-border::before {
+.success.sideBorder::before {
   background: var(--banner__success__border__bannerborder);
 }
-.nile-banner--warning.nile-banner--side-border {
+.warning.sideBorder {
   background: var(--banner__warning__background__bannerbg);
 }
-.nile-banner--warning.nile-banner--side-border::before {
+.warning.sideBorder::before {
   background: var(--banner__warning__border__bannerborder);
 }
-.nile-banner--error.nile-banner--side-border {
+.error.sideBorder {
   background: var(--banner__error__background__bannerbg);
 }
-.nile-banner--error.nile-banner--side-border::before {
+.error.sideBorder::before {
   background: var(--banner__error__border__bannerborder);
 }
-.nile-banner--general.nile-banner--side-border {
+.general.sideBorder {
   background: var(--banner__general__background__bannerbg);
 }
-.nile-banner--general.nile-banner--side-border::before {
+.general.sideBorder::before {
   background: var(--banner__general__border__bannerborder);
 }
 
-.nile-banner__content {
+.content {
   grid-column: 1 / 2;
   display: flex;
   align-items: flex-start;
   gap: var(--size__12);
 }
 
-.nile-banner__icon {
+.icon {
   flex-shrink: 0;
 }
 
-.nile-banner__icon svg {
+.icon svg {
   stroke-width: 2;
 }
 
-.nile-banner--info .nile-banner__icon {
+.info .icon {
   color: var(--banner__info__icon__bannericoninfo);
 }
-.nile-banner--success .nile-banner__icon {
+.success .icon {
   color: var(--banner__success__icon__bannericonsuccess);
 }
-.nile-banner--warning .nile-banner__icon {
+.warning .icon {
   color: var(--banner__warning__icon__bannericonwarning);
 }
-.nile-banner--error .nile-banner__icon {
+.error .icon {
   color: var(--banner__error__icon__bannericonerror);
 }
 
-.nile-banner__body {
+.body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   gap: var(--size__4);
 }
 
-.nile-banner__title {
+.title {
   font-size: var(--typescale__14__size);
   font-weight: var(--typeface__weight__SemiBold);
   line-height: var(--typescale__14__lineheight);
   letter-spacing: var(--typescale__14__tracking);
 }
-.nile-banner__title--info {
+
+.titleInfo {
   color: var(--banner__info__text__bannertexttitle);
 }
-.nile-banner__title--success {
+.titleSuccess {
   color: var(--banner__success__text__bannertexttitle);
 }
-.nile-banner__title--warning {
+.titleWarning {
   color: var(--banner__warning__text__bannertexttitle);
 }
-.nile-banner__title--error {
+.titleError {
   color: var(--banner__error__text__bannertexttitle);
 }
-.nile-banner__title--general {
+.titleGeneral {
   color: var(--banner__general__text__bannertexttitle);
 }
 
-.nile-banner__subtitle {
+.subtitle {
   font-size: var(--typescale__14__size);
   line-height: var(--typescale__14__lineheight);
   letter-spacing: var(--typescale__14__tracking);
   color: var(--banner__text__bannertextsubtitle);
 }
 
-/* --- Trailing Actions (Upgrade & Dismiss) --- */
-.nile-banner__trailing-actions {
+.trailingActions {
   grid-column: 2 / 3;
   display: flex;
   gap: 8px;
@@ -161,26 +158,13 @@
   flex-shrink: 0;
 }
 
-.nile-banner__upgrade-button {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  line-height: 1.5;
-  background-color: var(--color-primary-button);
-  color: white;
-}
-
-.nile-banner__close {
+.close {
   cursor: pointer;
   color: var(--banner__icon__bannericondismiss);
   align-self: flex-start;
 }
-/* --- Restore Button Style --- */
 
-.nile-banner__show-button {
+.showButton {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 6px 10px;

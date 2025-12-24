@@ -1,11 +1,11 @@
 import {
   ArrowRightIcon,
   CheckmarkCircle02Icon,
-  PrinterIcon
-} from '@hugeicons/core-free-icons';
-import React from 'react';
-import './button.css';
-import type { ButtonProps } from './Button.types';
+  PrinterIcon,
+} from "@hugeicons/core-free-icons"
+import React from "react"
+import type { ButtonProps } from "./Button.types"
+import classes from "./button.module.css"
 
 function renderIconDef(def: readonly any[], size = 16) {
   return (
@@ -22,18 +22,18 @@ function renderIconDef(def: readonly any[], size = 16) {
         React.createElement(tag, { ...attrs, key: i })
       )}
     </svg>
-  );
+  )
 }
 
-const ICON_FOR_LEAD = PrinterIcon;
-const ICON_FOR_TRAIL = ArrowRightIcon || CheckmarkCircle02Icon;
+const ICON_FOR_LEAD = PrinterIcon
+const ICON_FOR_TRAIL = ArrowRightIcon || CheckmarkCircle02Icon
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
-      size = 'md',
-      variant = 'primary',
-      option = 'default',
+      size = "md",
+      variant = "primary",
+      option = "default",
       leadIcon = false,
       trailIcon = false,
       text,
@@ -42,66 +42,68 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    const variantClass = classes[variant as keyof typeof classes]
+    const sizeClass = classes[`size${size.toUpperCase()}` as keyof typeof classes]
+    const optionClass = classes[`option${option.charAt(0).toUpperCase() + option.slice(1).replace(/-/g, '')}` as keyof typeof classes]
     const classNames = [
-      'nile-btn',
-      `nile-btn--${variant}`,
-      `nile-btn--size-${size}`,
-      `nile-btn--option-${option}`,
-      disabled ? 'is-disabled' : '',
+      classes.button,
+      variantClass,
+      sizeClass,
+      optionClass,
+      disabled ? classes.isDisabled : "",
     ]
       .filter(Boolean)
-      .join(' ');
+      .join(" ")
 
-    const iconSize = size === 'sm' ? 16 : size === 'md' ? 20 : 24;
+    const iconSize = size === "sm" ? 16 : size === "md" ? 20 : 24
 
-    const isIconOnly = option === 'icon-only';
+    const isIconOnly = option === "icon-only"
 
     // If icon-only, render a single centered icon. Do not render lead/trail around text.
     if (isIconOnly) {
       const centerIcon =
         (leadIcon ? renderIconDef(ICON_FOR_LEAD, iconSize) : null) ??
         (trailIcon ? renderIconDef(ICON_FOR_TRAIL, iconSize) : null) ??
-        renderIconDef(ICON_FOR_LEAD, iconSize);
+        renderIconDef(ICON_FOR_LEAD, iconSize)
 
       return (
-        <button
-          ref={ref}
-          className={classNames}
-          disabled={disabled}
-          {...rest}
-        >
-          <span className="nile-btn__icon-only">{centerIcon}</span>
+        <button ref={ref} className={classNames} disabled={disabled} {...rest}>
+          <span className={classes.icon}>{centerIcon}</span>
         </button>
-      );
+      )
     }
 
     return (
       <button
         ref={ref}
         className={classNames}
-        disabled={disabled || option === 'loading'}
-        aria-busy={option === 'loading' ? true : undefined}
+        disabled={disabled || option === "loading"}
+        aria-busy={option === "loading" ? true : undefined}
         {...rest}
       >
         {/* Lead icon (only if not icon-only) */}
         {leadIcon && !isIconOnly ? (
-          <span className="nile-btn__lead">{renderIconDef(ICON_FOR_LEAD, iconSize)}</span>
+          <span className={classes.lead}>
+            {renderIconDef(ICON_FOR_LEAD, iconSize)}
+          </span>
         ) : null}
 
         {/* Loading spinner or text */}
-        {option === 'loading' ? (
-          <span className="nile-btn__spinner" aria-hidden />
+        {option === "loading" ? (
+          <span className={classes.spinner} aria-hidden />
         ) : (
-          <span className="nile-btn__text">{text}</span>
+          <span className={classes.text}>{text}</span>
         )}
 
         {/* Trail icon (only if not icon-only) */}
         {trailIcon && !isIconOnly ? (
-          <span className="nile-btn__trail">{renderIconDef(ICON_FOR_TRAIL, iconSize)}</span>
+          <span className={classes.trail}>
+            {renderIconDef(ICON_FOR_TRAIL, iconSize)}
+          </span>
         ) : null}
       </button>
-    );
+    )
   }
-);
+)
 
-export default Button;
+export default Button

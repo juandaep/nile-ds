@@ -1,25 +1,25 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
 export type AccordionItemData = {
-  id: string;
-  title: string;
-  subtext?: string;
-  content: ReactNode;
-};
+  id: string
+  title: string
+  subtext?: string
+  content: ReactNode
+}
 
-export type OpenState = string | null | string[];
+export type OpenState = string | null | string[]
 
 export interface AccordionProps {
-  items: AccordionItemData[];
-  className?: string;
-  allowMultipleOpen?: boolean;
+  items: AccordionItemData[]
+  className?: string
+  allowMultipleOpen?: boolean
 }
 
 export interface AccordionItemProps {
-  id: string;
-  title: string;
-  subtext?: string;
-  isOpen: boolean;
-  onClick: (id: string) => void;
-  children: ReactNode;
+  id: string
+  title: string
+  subtext?: string
+  isOpen: boolean
+  onClick: (id: string) => void
+  children: ReactNode
 }
