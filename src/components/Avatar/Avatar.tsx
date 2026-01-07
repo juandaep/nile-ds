@@ -44,8 +44,8 @@ const textSizeMap: Record<AvatarSize, string> = {
   lg: classes.textLg,
 }
 const typeClassMap: Record<string, string> = {
-  profile: classes.profile,
-  initial: classes.initial,
+  Profile: classes.Profile,
+  Initial: classes.Initial,
   "icon-filled": classes.filled,
   "icon-outlined": classes.outlined,
 }
@@ -109,7 +109,7 @@ export const Avatar = ({
 
   const renderContent = () => {
     switch (type) {
-      case "profile":
+      case "Profile":
         if (photoUrl) {
           return <img src={photoUrl} alt="Profile" className={classes.photo} />
         } else {
@@ -123,7 +123,7 @@ export const Avatar = ({
             />
           )
         }
-      case "initial":
+      case "Initial":
         return <span className={textSizeMap[size]}>{initial}</span>
       case "icon-filled":
       case "icon-outlined":

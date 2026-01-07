@@ -17,7 +17,7 @@
   gap: var(--size__12);
 }
 
-.outlined {
+.Outlined {
   border: 1px solid;
 }
 .sideBorder {
@@ -33,55 +33,55 @@
   border-radius: 8px 0 0 8px;
 }
 
-.info.outlined {
+.Info.Outlined {
   background: var(--banner__info__background__bannerbg);
   border-color: var(--banner__info__border__bannerborderlow);
 }
-.success.outlined {
+.Success.Outlined {
   background: var(--banner__success__background__bannerbg);
   border: 1px solid var(--banner__success__border__bannerborderlow);
 }
-.warning.outlined {
+.Warning.Outlined {
   background: var(--banner__warning__background__bannerbg);
   border: 1px solid var(--banner__warning__border__bannerborderlow);
 }
-.error.outlined {
+.Error.Outlined {
   background: var(--banner__error__background__bannerbg);
   border: 1px solid var(--banner__error__border__bannerborderlow);
 }
-.general.outlined {
+.General.Outlined {
   background: var(--banner__general__background__bannerbg);
   border: 1px solid var(--banner__general__border__bannerborderlow);
 }
 
-.info.sideBorder {
+.Info.sideBorder {
   background: var(--banner__info__background__bannerbg);
 }
-.info.sideBorder::before {
+.Info.sideBorder::before {
   background: var(--banner__info__border__bannerborder);
 }
-.success.sideBorder {
+.Success.sideBorder {
   background: var(--banner__success__background__bannerbg);
 }
-.success.sideBorder::before {
+.Success.sideBorder::before {
   background: var(--banner__success__border__bannerborder);
 }
-.warning.sideBorder {
+.Warning.sideBorder {
   background: var(--banner__warning__background__bannerbg);
 }
-.warning.sideBorder::before {
+.Warning.sideBorder::before {
   background: var(--banner__warning__border__bannerborder);
 }
-.error.sideBorder {
+.Error.sideBorder {
   background: var(--banner__error__background__bannerbg);
 }
-.error.sideBorder::before {
+.Error.sideBorder::before {
   background: var(--banner__error__border__bannerborder);
 }
-.general.sideBorder {
+.General.sideBorder {
   background: var(--banner__general__background__bannerbg);
 }
-.general.sideBorder::before {
+.General.sideBorder::before {
   background: var(--banner__general__border__bannerborder);
 }
 
@@ -100,16 +100,16 @@
   stroke-width: 2;
 }
 
-.info .icon {
+.Info .icon {
   color: var(--banner__info__icon__bannericoninfo);
 }
-.success .icon {
+.Success .icon {
   color: var(--banner__success__icon__bannericonsuccess);
 }
-.warning .icon {
+.Warning .icon {
   color: var(--banner__warning__icon__bannericonwarning);
 }
-.error .icon {
+.Error .icon {
   color: var(--banner__error__icon__bannericonerror);
 }
 

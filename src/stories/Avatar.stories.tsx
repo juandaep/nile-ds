@@ -47,7 +47,7 @@ const meta: Meta<typeof Avatar> = {
       description: 'Profile photo URL (only valid when type="profile").',
       if: { 
           arg: 'type', 
-          eq: 'profile'
+          eq: 'Profile'
         },
     },
     icon: {
@@ -59,7 +59,7 @@ const meta: Meta<typeof Avatar> = {
   },
 
   args: {
-    type: "initial",
+    type: "Initial",
     size: "md",
     initial: "kp",
   }
@@ -71,7 +71,7 @@ type Story = StoryObj<typeof Avatar>
 
 export const ProfileWithPhoto: Story = {
   args: {
-    type: "profile",
+    type: "Profile",
     size: "md",
     photoUrl: DUMMY_PHOTO,
   },
@@ -80,7 +80,7 @@ export const ProfileWithPhoto: Story = {
 
 export const ProfileFallback: Story = {
   args: {
-    type: "profile",
+    type: "Profile",
     size: "md",
     photoUrl: undefined,
   },
@@ -89,7 +89,7 @@ export const ProfileFallback: Story = {
 
 export const TextInitials: Story = {
   args: {
-    type: "initial",
+    type: "Initial",
     size: "md",
     initial: "JD",
   },

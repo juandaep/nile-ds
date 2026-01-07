@@ -2,12 +2,12 @@ import type { ReactNode } from "react"
 
 export type ButtonSize = "lg" | "md" | "sm"
 export type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "ghost"
-  | "danger"
-export type ButtonOption = "default" | "loading" | "icon-only"
+  | "Primary"
+  | "Secondary"
+  | "Tertiary"
+  | "Ghost"
+  | "Danger"
+export type ButtonOption = "Default" | "Loading" | "Icon Only"
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

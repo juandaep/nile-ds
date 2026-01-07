@@ -1,13 +1,13 @@
 import type { ReactNode } from "react"
 
 export type BannerVariant =
-  | "info"
-  | "success"
-  | "warning"
-  | "error"
-  | "general"
+  | "Info"
+  | "Success"
+  | "Warning"
+  | "Error"
+  | "General"
 
-export type BannerDesignType = "outlined" | "side-border"
+export type BannerDesignType = "Outlined" | "Side Border"
 
 export interface BannerProps {
   variant?: BannerVariant

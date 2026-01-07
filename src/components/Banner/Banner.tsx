@@ -14,11 +14,11 @@ import classes from "./banner.module.css"
 function renderIcon(variant: BannerVariant, size = 20) {
   const iconData =
     {
-      info: InformationCircleIcon,
-      success: CheckmarkCircle02Icon,
-      warning: AlertCircleIcon,
-      error: CancelCircleIcon,
-      general: InformationCircleIcon,
+      Info: InformationCircleIcon,
+      Success: CheckmarkCircle02Icon,
+      Warning: AlertCircleIcon,
+      Error: CancelCircleIcon,
+      General: InformationCircleIcon,
     }[variant] || InformationCircleIcon
   return (
     <svg
@@ -39,8 +39,8 @@ function renderIcon(variant: BannerVariant, size = 20) {
 }
 
 export const Banner = ({
-  variant = "info",
-  designType = "outlined",
+  variant = "Info",
+  designType = "Outlined",
   title,
   children,
   dismissible = false,
@@ -52,7 +52,16 @@ export const Banner = ({
 }: BannerProps) => {
   const [visible, setVisible] = React.useState(true)
 
-  const designTypeKey = designType.replace(/-./g, (m) => m[1].toUpperCase())
+  const designTypeKey = (() => {
+    if (designType.includes(" ")) {
+      return designType
+        .split(/\s+/)
+        .map((w, i) => (i === 0 ? w.charAt(0).toLowerCase() + w.slice(1) : w.charAt(0).toUpperCase() + w.slice(1)))
+        .join("")
+    }
+
+    return designType.replace(/-./g, (m) => m[1].toUpperCase())
+  })()
 
   const bannerClasses = [
     classes.banner,
@@ -95,7 +104,7 @@ export const Banner = ({
   return (
     <div role="alert" className={bannerClasses}>
       <div className={classes.content}>
-        {variant !== "general" && (
+        {variant !== "General" && (
           <span className={classes.icon}>{renderIcon(variant, 20)}</span>
         )}
 
@@ -110,7 +119,7 @@ export const Banner = ({
           <Button
             text="Upgrade"
             size="sm"
-            variant="tertiary"
+            variant="Tertiary"
             onClick={onTrailButton}
           />
         )}
@@ -138,13 +147,13 @@ export const Banner = ({
           <Button
             text="Cancel"
             size="sm"
-            variant="ghost"
+            variant="Ghost"
             onClick={handleDismiss}
           />
           <Button
             text="Try Again"
             size="sm"
-            variant="primary"
+            variant="Primary"
             onClick={onTryAgain}
           />
         </div>
