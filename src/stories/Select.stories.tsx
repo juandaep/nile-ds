@@ -69,7 +69,6 @@ export const ClearableInteractive: Story = {
   render: (args) => {
     const [val, setVal] = useState("")
     return (
-      <div style={{ width: 360 }}>
         <Select
           {...args}
           mode="Searchable"
@@ -77,7 +76,6 @@ export const ClearableInteractive: Story = {
           value={val}
           onChange={(v: string) => setVal(v)}
         />
-      </div>
     )
   },
 }
@@ -93,7 +91,6 @@ export const Error: Story = {
   render: (args) => {
     const [val, setVal] = useState("[]")
     return (
-      <div style={{ width: 360 }}>
         <Select
           {...args}
           mode="Searchable"
@@ -102,7 +99,6 @@ export const Error: Story = {
           value={val}
           onChange={(v: string) => setVal(v)}
         />
-      </div>
     )
   },
 }
