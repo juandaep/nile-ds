@@ -16,12 +16,12 @@ const meta: Meta<typeof Banner> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["info", "success", "warning", "error", "general"],
+      options: ["Info", "Success", "Warning", "Error", "General"],
       description: "Status color and banner icon",
     },
     designType: {
       control: "select",
-      options: ["outlined", "side-border"],
+      options: ["Outlined", "Side Border"],
       description: "Banner visual style. Default: outlined.",
     },
     title: { control: "text", description: "Banner title." },
@@ -78,8 +78,8 @@ const defaultArgs = {
 export const InfoOutlined: Story = {
   args: {
     ...defaultArgs,
-    variant: "info",
-    designType: "outlined",
+    variant: "Info",
+    designType: "Outlined",
   },
   name: "1. Info - Outlined Default Actions",
 }
@@ -87,8 +87,8 @@ export const InfoOutlined: Story = {
 export const SuccessSideBorderNoFooter: Story = {
   args: {
     ...defaultArgs,
-    variant: "success",
-    designType: "side-border",
+    variant: "Success",
+    designType: "Side Border",
     title: "Operation Successful",
     children: "All tasks have been completed without any issues.",
     showFooterButtons: false,
@@ -100,8 +100,8 @@ export const SuccessSideBorderNoFooter: Story = {
 export const ErrorWithUpgradeAndFooter: Story = {
   args: {
     ...defaultArgs,
-    variant: "error",
-    designType: "outlined",
+    variant: "Error",
+    designType: "Outlined",
     title: "Connection Error",
     children:
       "Failed to connect to the server. Please check your network and try again.",
@@ -114,8 +114,8 @@ export const ErrorWithUpgradeAndFooter: Story = {
 export const WarningPersistent: Story = {
   args: {
     ...defaultArgs,
-    variant: "warning",
-    designType: "side-border",
+    variant: "Warning",
+    designType: "Side Border",
     title: "Session Expiring Soon",
     children: "Please save your work before logging out in 5 minutes.",
     dismissible: false,
@@ -128,8 +128,8 @@ export const WarningPersistent: Story = {
 export const GeneralMinimal: Story = {
   args: {
     ...defaultArgs,
-    variant: "general",
-    designType: "outlined",
+    variant: "General",
+    designType: "Outlined",
     title: "General Announcement",
     children: "This is a general announcement for all users.",
     dismissible: true,

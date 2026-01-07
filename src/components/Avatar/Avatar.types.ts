@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-export type AvatarType = 'profile' | 'initial' | 'icon-filled' | 'icon-outlined' | 'icon-multiple'
+export type AvatarType = 'Profile' | 'Initial' | 'icon-filled' | 'icon-outlined' | 'icon-multiple'
 export type AvatarSize = 'sm' | 'md' | 'lg'
 
 export interface AvatarProps {

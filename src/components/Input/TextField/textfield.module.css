@@ -1,0 +1,87 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size__8);
+  padding: var(--size__10) var(--size__12);
+  min-width: 300px;
+  border-radius: var(--rounded-lg);
+  outline: 1px solid var(--textfield__border__tfborderdefault);
+  background: var(--textfield__background__tfbgdefault);
+  transition: box-shadow 0.12s ease, outline-color 0.12s ease;
+}
+
+.wrapper.focused {
+  outline-color: var(--textfield__border__tfborderfocused);
+  box-shadow: 0 0 0 4px var(--textfield__border__tfborderfocusedring);
+}
+
+.wrapper.error {
+  outline-color: var(--textfield__border__tfbordererror);
+  box-shadow: 0 0 0 4px var(--textfield__border__tfbordererrorring);
+}
+
+.wrapper.disabled {
+  background: var(--textfield__background__tfbgdisable);
+  cursor: not-allowed;
+}
+
+/* Make the wrapper clickable to focus the input when not disabled */
+.wrapper:not(.disabled):hover {
+  cursor: text;
+}
+
+/* When disabled, make all interactive elements show not-allowed and prevent pointer interactions */
+.wrapper.disabled .input,
+.wrapper.disabled .editable {
+  cursor: not-allowed;
+  user-select: none;
+  pointer-events: none;
+}
+
+.wrapper.disabled .leadingIcon,
+.wrapper.disabled .trailingIcon,
+.wrapper.disabled .clearButton,
+.wrapper.disabled .placeholder {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--textfield__icon__tficondisable);
+}
+
+.leadingIcon,
+.trailingIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textfield__icon__tficondefault);
+}
+
+.input {
+  border: none;
+  outline: none;
+  font-size: var(--typescale__14__size);
+  line-height: var(--typescale__14__lineheight);
+  letter-spacing: var(--typescale__14__letterspacing);
+  color: var(--textfield__text__tftextfilled);
+  background: transparent;
+  padding: 0;
+  flex: 1 1 auto;
+}
+
+.input::placeholder {
+  color: var(--textfield__text__tftextplaceholder);
+}
+
+.wrapper.disabled .input::placeholder {
+  color: var(--textfield__text__tftextdisable);
+}
+
+.clearButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--textfield__icon__tficondefault);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -32,8 +32,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       size = "md",
-      variant = "primary",
-      option = "default",
+      variant = "Primary",
+      option = "Default",
       leadIcon = false,
       trailIcon = false,
       text,
@@ -44,7 +44,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const variantClass = classes[variant as keyof typeof classes]
     const sizeClass = classes[`size${size.toUpperCase()}` as keyof typeof classes]
-    const optionClass = classes[`option${option.charAt(0).toUpperCase() + option.slice(1).replace(/-/g, '')}` as keyof typeof classes]
+    const normalizedOption = option.replace(/[-\s]/g, '')
+    const optionClass = classes[`option${normalizedOption}` as keyof typeof classes]
     const classNames = [
       classes.button,
       variantClass,
@@ -57,7 +58,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const iconSize = size === "sm" ? 16 : size === "md" ? 20 : 24
 
-    const isIconOnly = option === "icon-only"
+    const isIconOnly = option === "Icon Only"
 
     // If icon-only, render a single centered icon. Do not render lead/trail around text.
     if (isIconOnly) {
@@ -77,8 +78,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={classNames}
-        disabled={disabled || option === "loading"}
-        aria-busy={option === "loading" ? true : undefined}
+        disabled={disabled || option === "Loading"}
+        aria-busy={option === "Loading" ? true : undefined}
         {...rest}
       >
         {/* Lead icon (only if not icon-only) */}
@@ -89,7 +90,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : null}
 
         {/* Loading spinner or text */}
-        {option === "loading" ? (
+        {option === "Loading" ? (
           <span className={classes.spinner} aria-hidden />
         ) : (
           <span className={classes.text}>{text}</span>

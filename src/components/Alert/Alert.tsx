@@ -13,10 +13,10 @@ import classes from "./alert.module.css"
 function renderIcon(variant: AlertVariant, size = 20) {
   const iconData =
     {
-      info: InformationCircleIcon,
-      success: CheckmarkCircle02Icon,
-      warning: AlertCircleIcon,
-      danger: CancelCircleIcon,
+      Info: InformationCircleIcon,
+      Success: CheckmarkCircle02Icon,
+      Warning: AlertCircleIcon,
+      Danger: CancelCircleIcon,
     }[variant] || InformationCircleIcon
   return (
     <svg
@@ -36,7 +36,7 @@ function renderIcon(variant: AlertVariant, size = 20) {
 }
 
 export const Alert = ({
-  variant = "info",
+  variant = "Info",
   children,
   dismissible = false,
   onClose,

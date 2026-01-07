@@ -17,7 +17,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "radio",
-      options: ["info", "success", "warning", "danger"],
+      options: ["Info", "Success", "Warning", "Danger"],
       description:
         "Visual variant (color and icon) corresponding to the status.",
     },
@@ -42,7 +42,7 @@ type Story = StoryObj<typeof meta>
 
 export const Info: Story = {
   args: {
-    variant: "info",
+    variant: "Info",
     children: "This is an informational alert to provide feedback to the user.",
     dismissible: false,
   },
@@ -51,7 +51,7 @@ export const Info: Story = {
 
 export const Success: Story = {
   args: {
-    variant: "success",
+    variant: "Success",
     children: "Everything worked as expected.",
     dismissible: true,
   },
@@ -60,7 +60,7 @@ export const Success: Story = {
 
 export const Warning: Story = {
   args: {
-    variant: "warning",
+    variant: "Warning",
     children: "Be careful — there might be unintended consequences.",
     dismissible: true,
   },
@@ -69,7 +69,7 @@ export const Warning: Story = {
 
 export const Danger: Story = {
   args: {
-    variant: "danger",
+    variant: "Danger",
     children: "Something went wrong. Please try again.",
     dismissible: true,
   },
@@ -78,7 +78,7 @@ export const Danger: Story = {
 
 export const Dismissible: Story = {
   args: {
-    variant: "info",
+    variant: "Info",
     children:
       "This alert shows a close button. The `onClose` action will be called when clicked.",
     dismissible: true,

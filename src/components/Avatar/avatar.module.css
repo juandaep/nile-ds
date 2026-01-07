@@ -40,7 +40,7 @@
   letter-spacing: var(--typescale__18__tracking);
 }
 
-.profile {
+.Profile {
   background-color: #ccc;
 }
 .photo {
@@ -48,7 +48,7 @@
   height: 100%;
   object-fit: cover;
 }
-.initial {
+.Initial {
   background-color: var(--colors__surface__info__bginfo);
   color: white;
   text-transform: uppercase;

@@ -46,22 +46,22 @@
   cursor: pointer;
 }
 
-.info {
+.Info {
   background-color: var(--alert__info__alertbginfo);
   border-color: var(--alert__info__alertborderinfo);
   color: var(--alert__info__alerttextinfo);
 }
-.success {
+.Success {
   background-color: var(--alert__success__alertbgsuccess);
   border-color: var(--alert__success__alertbordersuccess);
   color: var(--alert__success__alerttextsuccess);
 }
-.warning {
+.Warning {
   background-color: var(--alert__warning__alertbgwarning);
   border-color: var(--alert__warning__alertborderwarning);
   color: var(--alert__warning__alerttextwarning);
 }
-.danger {
+.Danger {
   background-color: var(--alert__error__alertbgerror);
   border-color: var(--alert__error__alertbordererror);
   color: var(--alert__error__alerttexterror);

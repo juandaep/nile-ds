@@ -54,66 +54,66 @@
 }
 
 /* Variants (simple defaults, can be swapped for tokens) */
-.primary {
+.Primary {
   background: var(--button__primary__background__btnbgdefault);
   color: white;
 }
-.primary:hover {
+.Primary:hover {
   background: var(--button__primary__background__btnbghover);
 }
 
-.secondary {
+.Secondary {
   background: var(--button__secondary__background__btnbgdefault);
   color: var(--button__secondary__text__btntextdefault);
 }
-.secondary:hover {
+.Secondary:hover {
   background: var(--button__secondary__background__btnbghover);
 }
 
-.tertiary {
+.Tertiary {
   background: var(--button__tertiary__background__btnbgdefault);
   color: var(--button__tertiary__text__btntextdefault);
   outline: 1px solid var(--button__tertiary__border__btnborderdefault);
   outline-offset: -1px;
 }
-.tertiary:hover {
+.Tertiary:hover {
   background: var(--button__tertiary__background__btnbghover);
 }
 
-.ghost {
+.Ghost {
   background: transparent;
   color: var(--button__ghost__text__btntextdefault);
 }
-.ghost:hover {
+.Ghost:hover {
   background: var(--button__ghost__background__btnbghover);
   color: var(--button__ghost__text__btntextdefault);
 }
 
-.danger {
+.Danger {
   background: var(--button__danger__background__btnbgdefault);
   color: var(--button__danger__text__btntextdefault);
 }
-.danger:hover {
+.Danger:hover {
   background: var(--button__danger__background__btnbghover);
   color: var(--button__danger__text__btntexthover);
 }
 
-.primary.isDisabled,
-.secondary.isDisabled,
-.danger.isDisabled {
+.Primary.isDisabled,
+.Secondary.isDisabled,
+.Danger.isDisabled {
   background: var(--button__primary__background__btnbgdisable);
   color: var(--button__primary__text__btntextdisable);
   cursor: not-allowed;
   pointer-events: none;
 }
-.tertiary.isDisabled {
+.Tertiary.isDisabled {
   color: var(--button__primary__text__btntextdisable);
   outline: 1px solid var(--button__tertiary__border__btnborderdisable);
   outline-offset: -1px;
   cursor: not-allowed;
   pointer-events: none;
 }
-.ghost.isDisabled {
+.Ghost.isDisabled {
   color: var(--button__primary__text__btntextdisable);
   cursor: not-allowed;
   pointer-events: none;
@@ -197,19 +197,19 @@
 }
 
 /* Secondary, tertiary, and ghost sit on white backgrounds: use dark spinner */
-.secondary .spinner,
-.tertiary .spinner,
-.ghost .spinner {
+.Secondary .spinner,
+.Tertiary .spinner,
+.Ghost .spinner {
   border: 2px solid rgba(0, 0, 0, 0.15);
   border-top-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Danger uses a red spinner */
-.danger .spinner {
+.Danger .spinner {
   border: 2px solid rgba(220, 38, 38, 0.25);
   border-top-color: rgba(220, 38, 38, 0.9);
 }
-.danger:hover .spinner {
+.Danger:hover .spinner {
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: rgba(255, 255, 255, 0.9);
 }

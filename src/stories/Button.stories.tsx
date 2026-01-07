@@ -24,13 +24,13 @@ const meta: Meta<typeof Button> = {
     },
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "tertiary", "ghost", "danger"],
+      options: ["Primary", "Secondary", "Tertiary", "Ghost", "Danger"],
       description:
         "Defines the visual style and hierarchy of the button (e.g., primary for main action, ghost for low-priority).",
     },
     option: {
       control: { type: "radio" },
-      options: ["default", "loading", "icon-only"],
+      options: ["Default", "Loading", "Icon Only"],
       description:
         "Defines special states of the button, such as displaying a loading spinner or showing only an icon.",
     },
@@ -55,6 +55,10 @@ const meta: Meta<typeof Button> = {
       control: "boolean",
       description:
         "If TRUE, the button is non-interactive and visually disabled.",
+        if: {
+          arg: "option",
+          neq: "Loading"
+        }
     },
     text: {
       control: "text",
@@ -69,8 +73,8 @@ const meta: Meta<typeof Button> = {
   args: {
     onClick: fn(),
     size: "md",
-    variant: "primary",
-    option: "default",
+    variant: "Primary",
+    option: "Default",
     text: "Button",
     leadIcon: false,
     trailIcon: false,
@@ -83,21 +87,21 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: { text: "Primary", variant: "primary", size: "md" },
+  args: { text: "Primary", variant: "Primary", size: "md" },
   name: "1. Primary Button",
 }
 
 export const Secondary: Story = {
-  args: { text: "Secondary", variant: "secondary", size: "md" },
+  args: { text: "Secondary", variant: "Secondary", size: "md" },
   name: "2. Secondary Button",
 }
 
 export const Sizes: Story = {
   render: () => (
     <div style={{ display: "flex", gap: 12 }}>
-      <Button size="sm" text="Small" variant="primary" />
-      <Button size="md" text="Medium" variant="primary" />
-      <Button size="lg" text="Large" variant="primary" />
+      <Button size="sm" text="Small" variant="Primary" />
+      <Button size="md" text="Medium" variant="Primary" />
+      <Button size="lg" text="Large" variant="Primary" />
     </div>
   ),
   name: "3. Size Variations",
@@ -105,7 +109,7 @@ export const Sizes: Story = {
 
 export const IconOnly: Story = {
   args: {
-    option: "icon-only",
+    option: "Icon Only",
     leadIcon: true,
     text: "",
   },
@@ -113,6 +117,6 @@ export const IconOnly: Story = {
 }
 
 export const Loading: Story = {
-  args: { option: "loading", text: "Loading" },
+  args: { option: "Loading", text: "Loading" },
   name: "5. Loading State",
 }
