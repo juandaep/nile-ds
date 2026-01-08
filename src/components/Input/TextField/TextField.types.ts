@@ -23,6 +23,6 @@ export type TextFieldProps = {
    * 'symbol' - non-alphanumeric characters (punctuation, spaces, symbols)
    * 'all' - no restriction
    */
-  charType?: "alpha" | "numeric" | "alphanumeric" | "symbol" | "all"
+  charType?: "Alpha" | "Numeric" | "Alphanumeric" | "Symbol" | "All"
   className?: string
 }

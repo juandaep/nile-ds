@@ -38,15 +38,15 @@ export const TextField = ({
 
   // sanitize according to charType
   const sanitizeValue = (s: string) => {
-    if (!charType || charType === "all") return s
+    if (!charType || charType === "All") return s
     switch (charType) {
-      case "numeric":
+      case "Numeric":
         return s.replace(/[^0-9]/g, "")
-      case "alpha":
+      case "Alpha":
         return s.replace(/[^a-zA-Z]/g, "")
-      case "alphanumeric":
+      case "Alphanumeric":
         return s.replace(/[^a-zA-Z0-9]/g, "")
-      case "symbol":
+      case "Symbol":
         // keep only non-alphanumeric characters (including spaces and punctuation)
         return s.replace(/[a-zA-Z0-9]/g, "")
       default:
@@ -77,11 +77,11 @@ export const TextField = ({
     // allow control keys (Backspace, Delete, Arrow keys, Tab)
     if (key.length !== 1) return
     const ok = ((): boolean => {
-      if (charType === "numeric") return /[0-9]/.test(key)
-      if (charType === "alpha") return /[a-zA-Z]/.test(key)
-      if (charType === "alphanumeric") return /[a-zA-Z0-9]/.test(key)
-      if (charType === "symbol") return /[^a-zA-Z0-9]/.test(key)
-      if (charType === "all") return true
+      if (charType === "Numeric") return /[0-9]/.test(key)
+      if (charType === "Alpha") return /[a-zA-Z]/.test(key)
+      if (charType === "Alphanumeric") return /[a-zA-Z0-9]/.test(key)
+      if (charType === "Symbol") return /[^a-zA-Z0-9]/.test(key)
+      if (charType === "All") return true
       return true
     })()
     if (!ok) e.preventDefault()
@@ -131,7 +131,6 @@ export const TextField = ({
 
   const handleWrapperClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (forcedDisabled) return
-    // if clicking on a button (clear) or interactive child, don't steal focus
     const target = e.target as HTMLElement
     if (target.closest("button")) return
     inputRef.current?.focus()
