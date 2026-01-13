@@ -16,23 +16,73 @@ const meta: Meta<typeof Select> = {
   component: Select,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Select Field is used to choose one option from a predefined list. It supports both standard selection and searchable selection modes, with optional clear functionality and leading icons.",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {
-    id: { control: "text", table: { category: "Fn" }},
-    name: { control: "text", table: { category: "Fn" } },
-    options: { table: { category: "Data" } },
-    placeholder: { control: "text" },
-    mode: { control: { type: "select" }, options: ["Select Only", "Searchable"] },
-    clearable: { control: "boolean", if: { arg: "mode", eq: "type" } },
-    showLeadIcon: { control: "boolean" },
-    disabled: { control: "boolean" },
-    error: { control: "boolean", if: { arg: "disabled", eq: false } },
-    onChange: { table: { category: "Fn" } },
-    value: {table: { category: "Fn" }},
-    defaultValue: {table: { category: "Fn" }},
-    leadIcon: { table: { category: "Appearance" }},
-    className: { table: { category: "Appearance" }},
+    id: {
+      control: "text",
+      table: { category: "Fn" },
+      description: "Optional id for the select element",
+    },
+    name: {
+      control: "text",
+      table: { category: "Fn" },
+      description: "Optional name for the select element",
+    },
+    options: {
+      table: { category: "Data" },
+      description: "Array of options to display in the select dropdown",
+    },
+    placeholder: {
+      control: "text",
+      description: "Placeholder text when no option is selected",
+    },
+    mode: {
+      control: { type: "select" },
+      options: ["Select Only", "Searchable"],
+      description: "Select mode: standard or searchable",
+    },
+    clearable: {
+      control: "boolean",
+      if: { arg: "mode", eq: "type" },
+      description: "Show clear button when value is present",
+    },
+    showLeadIcon: {
+      control: "boolean",
+      description: "Show leading icon in the select field",
+    },
+    disabled: { control: "boolean", description: "Disabled state" },
+    error: {
+      control: "boolean",
+      if: { arg: "disabled", eq: false },
+      description: "Error visual state",
+    },
+    onChange: {
+      table: { category: "Fn" },
+      description: "Callback when the selected value changes",
+    },
+    value: {
+      table: { category: "Fn" },
+      description: "Controlled selected value",
+    },
+    defaultValue: {
+      table: { category: "Fn" },
+      description: "Uncontrolled default selected value",
+    },
+    leadIcon: {
+      table: { category: "Appearance" },
+      description: "Custom leading icon element",
+    },
+    className: {
+      table: { category: "Appearance" },
+      description: "Custom class name for styling",
+    },
   },
   args: {
     options: sampleOptions,
@@ -69,13 +119,13 @@ export const ClearableInteractive: Story = {
   render: (args) => {
     const [val, setVal] = useState("")
     return (
-        <Select
-          {...args}
-          mode="Searchable"
-          clearable
-          value={val}
-          onChange={(v: string) => setVal(v)}
-        />
+      <Select
+        {...args}
+        mode="Searchable"
+        clearable
+        value={val}
+        onChange={(v: string) => setVal(v)}
+      />
     )
   },
 }
@@ -91,14 +141,14 @@ export const Error: Story = {
   render: (args) => {
     const [val, setVal] = useState("[]")
     return (
-        <Select
-          {...args}
-          mode="Searchable"
-          clearable
-          error
-          value={val}
-          onChange={(v: string) => setVal(v)}
-        />
+      <Select
+        {...args}
+        mode="Searchable"
+        clearable
+        error
+        value={val}
+        onChange={(v: string) => setVal(v)}
+      />
     )
   },
 }

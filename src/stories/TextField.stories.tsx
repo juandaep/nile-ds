@@ -30,7 +30,7 @@ const meta: Meta<typeof TextField> = {
     value: { control: "text", description: "Controlled value" },
     placeholder: { control: "text", description: "Placeholder text" },
     state: {
-        control: fn,
+      control: fn,
       description: "Force visual state (default, focused, disabled)",
       table: { category: "Fn" },
     },
@@ -42,7 +42,7 @@ const meta: Meta<typeof TextField> = {
     },
     charType: {
       control: { type: "select" },
-      options: ["alpha", "numeric", "alphanumeric", "symbol", "all"],
+      options: ["Alpha", "Numeric", "Alphanumeric", "Symbol", "All"],
       description: "Restrict allowed character types",
     },
     disabled: { control: "boolean", description: "Disabled state" },
@@ -51,11 +51,26 @@ const meta: Meta<typeof TextField> = {
       description: "Error visual state",
       if: { arg: "disabled", eq: false },
     },
-    leadIcon: { table: { category: "Appearance" } },
-    trailIcon: { table: { category: "Appearance" } },
-    defaultValue: { table: { category: "Fn" } },
-    className: { table: { category: "Appearance" } },
-    onChange: { table: { category: "Fn" } },
+    leadIcon: {
+      table: { category: "Appearance" },
+      description: "Leading icon",
+    },
+    trailIcon: {
+      table: { category: "Appearance" },
+      description: "Trailing icon",
+    },
+    defaultValue: {
+      table: { category: "Fn" },
+      description: "Uncontrolled default value",
+    },
+    className: {
+      table: { category: "Appearance" },
+      description: "Custom class name for styling",
+    },
+    onChange: {
+      table: { category: "Fn" },
+      description: "Callback when the input value changes",
+    },
   },
   args: {
     onChange: fn(),
@@ -65,7 +80,7 @@ const meta: Meta<typeof TextField> = {
     clearable: false,
     disabled: false,
     error: false,
-    charType: "all",
+    charType: "All",
   },
 }
 
@@ -109,7 +124,7 @@ export const Clearable: Story = {
   render: (args) => {
     const [val, setVal] = useState("Kopra by Mandiri")
     return (
-        <TextField {...args} value={val} onChange={(v: string) => setVal(v)} />
+      <TextField {...args} value={val} onChange={(v: string) => setVal(v)} />
     )
   },
   args: { clearable: true },

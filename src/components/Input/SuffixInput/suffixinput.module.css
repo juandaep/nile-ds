@@ -1,0 +1,126 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  min-width: 300px;
+  background: transparent;
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--size__10) var(--size__12);
+  border-radius: var(--rounded-lg) 0 0 var(--rounded-lg);
+  background: var(--textfield__background__tfbgdefault);
+  outline: 1px solid var(--textfield__border__tfborderdefault);
+  transition: box-shadow 0.12s ease, outline-color 0.12s ease;
+}
+
+.control:focus-within {
+  position: relative;
+  z-index: 5;
+  outline-color: var(--textfield__border__tfborderfocused);
+  box-shadow: 0 0 0 4px var(--textfield__border__tfborderfocusedring);
+}
+
+/* Thin overlay line that sits on top of the suffix's top edge */
+.control:focus-within::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: calc(-1 * var(--suffix-width));
+  width: var(--suffix-width);
+  height: 3px;
+  background: var(--textfield__border__tfborderfocused);
+  z-index: 6;
+  pointer-events: none;
+  border-radius: 2px 2px 0 0;
+}
+
+.control.error {
+  outline-color: var(--textfield__border__tfbordererror);
+  box-shadow: 0 0 0 4px var(--textfield__border__tfbordererrorring);
+  position: relative;
+  z-index: 5; 
+}
+
+.control.error::after {
+  content: "";
+  position: absolute;
+  top: -2px; 
+  right: calc(-1 * var(--suffix-width));
+  width: var(--suffix-width);
+  height: 3px;
+  background: var(--textfield__border__tfbordererror);
+  z-index: 6;
+  pointer-events: none;
+  border-radius: 2px 2px 0 0;
+}
+
+.control.error:focus-within {
+  position: relative;
+  z-index: 5;
+  outline-color: var(--textfield__border__tfbordererror);
+  box-shadow: 0 0 0 4px var(--textfield__border__tfbordererrorring);
+}
+
+/* When control is focused (any state), move suffix behind */
+.control:focus-within + .suffix {
+  z-index: 1;
+}
+
+/* When control is errored, keep suffix behind so the error line shows on top */
+.control.error + .suffix {
+  z-index: 1;
+}
+.wrapper.disabled .control {
+  background: var(--textfield__background__tfbgdisable);
+  cursor: not-allowed;
+}
+
+.suffix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--textfield__background__tfbgdisable);
+  outline: 1px solid var(--textfield__border__tfborderdefault);
+  color: var(--textfield__text__tftextfilled);
+  padding: var(--size__10) var(--size__12);
+  font-size: var(--typescale__14__size);
+  line-height: var(--typescale__14__lineheight);
+  letter-spacing: var(--typescale__14__letterspacing);
+  border-radius: 0  var(--rounded-lg) var(--rounded-lg) 0 ;
+  white-space: nowrap;
+}
+
+.input {
+  border: none;
+  outline: none;
+  font-size: var(--typescale__14__size);
+  line-height: var(--typescale__14__lineheight);
+  letter-spacing: var(--typescale__14__letterspacing);
+  color: var(--textfield__text__tftextfilled);
+  background: transparent;
+  flex: 1 1 auto;
+  padding: 0;
+}
+
+.input::placeholder {
+  color: var(--textfield__text__tftextplaceholder);
+}
+
+.clearButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--textfield__icon__tficondefault);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper.disabled .suffix {
+  color: var(--textfield__text__tftextdisable);
+  background: var(--textfield__background__tfbgdisable);
+}

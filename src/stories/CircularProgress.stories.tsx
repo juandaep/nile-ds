@@ -5,6 +5,15 @@ const meta: Meta<typeof CircularProgress> = {
   title: "Nile Components/Circular Progress",
   component: CircularProgress,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component:
+          "The Circular Progress component is used to indicate loading or ongoing processes in a circular form. It can be customized in size and color scheme to fit different design contexts.",
+      },
+    },
+  },
   argTypes: {
     size: {
       control: "radio",
@@ -18,6 +27,8 @@ const meta: Meta<typeof CircularProgress> = {
     },
     className: {
       control: "text",
+      description: "Custom class name for styling",
+      table: { category: "Appearance" },
     },
   },
   args: {
