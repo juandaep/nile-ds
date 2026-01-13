@@ -63,7 +63,7 @@ const meta: Meta<typeof SuffixInput> = {
   },
   args: {
     onChange: fn(),
-    suffix: "USD",
+    suffix: "%",
     placeholder: "Placeholder",
     clearable: false,
     disabled: false,
@@ -98,7 +98,7 @@ export const SuffixAndClearable: Story = {
       />
     )
   },
-  args: { suffix: "USD", clearable: true },
+  args: { suffix: "%", clearable: true },
 }
 
 export const Disabled: Story = {
